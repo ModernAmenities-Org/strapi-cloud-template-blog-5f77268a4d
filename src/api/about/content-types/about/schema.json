@@ -12,12 +12,32 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "Label": {
       "type": "string"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "Title": {
+      "type": "string"
+    },
+
+    "OurStory": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section-block"
+    },
+    "PoweredInnovation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.feature"
+    },
+    "Vision": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section-block"
+    },
+    "CtaBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.info-section"
     }
   }
 }
