@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_info_sections",
+  "info": {
+    "displayName": "info-section"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "ButtonText": {
+      "type": "string"
+    },
+    "ButtonUrl": {
+      "type": "string"
+    }
+  }
+}

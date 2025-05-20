@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_features",
+  "info": {
+    "displayName": "Feature",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "InnovationTitle": {
+      "type": "string"
+    },
+    "InnovationDescription": {
+      "type": "string"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.icon-block"
+    }
+  }
+}
