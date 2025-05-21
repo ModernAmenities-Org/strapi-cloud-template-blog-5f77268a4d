@@ -11,18 +11,18 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Label": {
+    "label": {
       "type": "string"
     },
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "CtaBlock": {
+    "ctaBlock": {
       "type": "component",
       "repeatable": false,
       "component": "shared.info-section"
     },
-    "Card": {
+    "card": {
       "displayName": "Contact-card",
       "type": "component",
       "repeatable": true,

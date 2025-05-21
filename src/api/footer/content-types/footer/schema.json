@@ -10,7 +10,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Logo": {
+    "logo": {
       "allowedTypes": [
         "images",
         "files",
@@ -20,15 +20,15 @@
       "type": "media",
       "multiple": false
     },
-    "FooterColumn": {
+    "footerColumn": {
       "type": "component",
       "repeatable": true,
       "component": "shared.footer-column"
     },
-    "CopyRightText": {
+    "copyRightText": {
       "type": "string"
     },
-    "SocialLinks": {
+    "socialLinks": {
       "type": "component",
       "repeatable": true,
       "component": "shared.social-link"

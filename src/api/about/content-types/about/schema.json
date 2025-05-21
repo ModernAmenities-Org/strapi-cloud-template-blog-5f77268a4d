@@ -12,31 +12,32 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Label": {
+    "label": {
       "type": "string"
     },
-    "OurStory": {
+    
+    "title": {
+      "type": "string"
+    },
+    "ourStory": {
       "type": "component",
       "repeatable": false,
       "component": "shared.section-block"
     },
-    "PoweredInnovation": {
+    "poweredInnovation": {
       "type": "component",
       "repeatable": false,
       "component": "shared.feature"
     },
-    "Vision": {
+    "vision": {
       "type": "component",
       "repeatable": false,
       "component": "shared.section-block"
     },
-    "CtaBlock": {
+    "ctaBlock": {
       "type": "component",
       "repeatable": false,
       "component": "shared.info-section"
-    },
-    "Title": {
-      "type": "string"
     }
   }
 }

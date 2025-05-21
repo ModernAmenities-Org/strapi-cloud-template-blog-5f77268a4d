@@ -384,19 +384,19 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    CtaBlock: Schema.Attribute.Component<'shared.info-section', false>;
-    Label: Schema.Attribute.String;
+    ctaBlock: Schema.Attribute.Component<'shared.info-section', false>;
+    label: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
-    OurStory: Schema.Attribute.Component<'shared.section-block', false>;
-    PoweredInnovation: Schema.Attribute.Component<'shared.feature', false>;
+    ourStory: Schema.Attribute.Component<'shared.section-block', false>;
+    poweredInnovation: Schema.Attribute.Component<'shared.feature', false>;
     publishedAt: Schema.Attribute.DateTime;
-    Title: Schema.Attribute.String;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Vision: Schema.Attribute.Component<'shared.section-block', false>;
+    vision: Schema.Attribute.Component<'shared.section-block', false>;
   };
 }
 
@@ -514,12 +514,12 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    Card: Schema.Attribute.Component<'shared.contact-card', true>;
+    card: Schema.Attribute.Component<'shared.contact-card', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    CtaBlock: Schema.Attribute.Component<'shared.info-section', false>;
-    Label: Schema.Attribute.String;
+    ctaBlock: Schema.Attribute.Component<'shared.info-section', false>;
+    label: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -527,7 +527,7 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    Title: Schema.Attribute.String;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -545,20 +545,20 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    CopyRightText: Schema.Attribute.String;
+    copyRightText: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    FooterColumn: Schema.Attribute.Component<'shared.footer-column', true>;
+    footerColumn: Schema.Attribute.Component<'shared.footer-column', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::footer.footer'
     > &
       Schema.Attribute.Private;
-    Logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
-    SocialLinks: Schema.Attribute.Component<'shared.social-link', true>;
+    socialLinks: Schema.Attribute.Component<'shared.social-link', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
