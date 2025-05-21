@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_contact_info_blocks",
+  "info": {
+    "displayName": "Contact-info-block"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Value": {
+      "type": "string"
+    }
+  }
+}
