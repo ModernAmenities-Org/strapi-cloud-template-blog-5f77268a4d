@@ -1,5 +1,54 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SectionsHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_hero_sections';
+  info: {
+    description: '';
+    displayName: 'Hero-section';
+  };
+  attributes: {
+    buttonText: Schema.Attribute.String;
+    buttonUrl: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    heroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsLeadCard extends Struct.ComponentSchema {
+  collectionName: 'components_sections_lead_cards';
+  info: {
+    displayName: 'lead-card';
+  };
+  attributes: {
+    city: Schema.Attribute.String;
+    hoursOfOperation: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    leadStatus: Schema.Attribute.String;
+    machinesRequested: Schema.Attribute.Integer;
+    occupancyCount: Schema.Attribute.String;
+    postalCode: Schema.Attribute.String;
+    postedAgo: Schema.Attribute.String;
+    price: Schema.Attribute.Integer;
+    state: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsVendLead extends Struct.ComponentSchema {
+  collectionName: 'components_sections_vend_leads';
+  info: {
+    description: '';
+    displayName: 'vend-Lead';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    vendLead: Schema.Attribute.Component<'sections.lead-card', true>;
+  };
+}
+
 export interface SharedContactCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_contact_cards';
   info: {
@@ -26,6 +75,17 @@ export interface SharedContactInfoBlock extends Struct.ComponentSchema {
   attributes: {
     Label: Schema.Attribute.String;
     Value: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faq_sections';
+  info: {
+    displayName: 'faq-section';
+  };
+  attributes: {
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+    heading: Schema.Attribute.Text;
   };
 }
 
@@ -155,11 +215,30 @@ export interface SharedTeamMember extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTestimonialsSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_testimonials_sections';
+  info: {
+    displayName: 'testimonials-section';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    subHeading: Schema.Attribute.String;
+    testimonials: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
+    >;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'sections.hero-section': SectionsHeroSection;
+      'sections.lead-card': SectionsLeadCard;
+      'sections.vend-lead': SectionsVendLead;
       'shared.contact-card': SharedContactCard;
       'shared.contact-info-block': SharedContactInfoBlock;
+      'shared.faq-section': SharedFaqSection;
       'shared.feature': SharedFeature;
       'shared.footer-column': SharedFooterColumn;
       'shared.footer-link': SharedFooterLink;
@@ -170,6 +249,7 @@ declare module '@strapi/strapi' {
       'shared.slider': SharedSlider;
       'shared.social-link': SharedSocialLink;
       'shared.team-member': SharedTeamMember;
+      'shared.testimonials-section': SharedTestimonialsSection;
     }
   }
 }

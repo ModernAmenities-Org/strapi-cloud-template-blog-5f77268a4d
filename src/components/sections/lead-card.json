@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_sections_lead_cards",
+  "info": {
+    "displayName": "lead-card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "leadStatus": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "postalCode": {
+      "type": "string"
+    },
+    "postedAgo": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "hoursOfOperation": {
+      "type": "string"
+    },
+    "occupancyCount": {
+      "type": "string"
+    },
+    "machinesRequested": {
+      "type": "integer"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
