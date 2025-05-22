@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plan_features",
+  "info": {
+    "singularName": "plan-feature",
+    "pluralName": "plan-features",
+    "displayName": "Plan Feature"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "feature": {
+      "type": "string",
+      "required": true
+    },
+    "bronze_value": {
+      "type": "string"
+    },
+    "silver_value": {
+      "type": "string"
+    },
+    "platinum_value": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}

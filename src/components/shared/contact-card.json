@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "Icon": {
+    "icon": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -17,18 +17,18 @@
         "audios"
       ]
     },
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Info": {
+    "info": {
       "type": "component",
       "repeatable": true,
       "component": "shared.contact-info-block"
     },
-    "CardDescription": {
+    "cardDescription": {
       "type": "string"
     },
-    "DescriptionUrl": {
+    "descriptionUrl": {
       "type": "string"
     }
   }
