@@ -7,26 +7,25 @@ export interface SharedContactCard extends Struct.ComponentSchema {
     displayName: 'Contact-card';
   };
   attributes: {
-    cardDescription: Schema.Attribute.String;
-    descriptionUrl: Schema.Attribute.String;
-    icon: Schema.Attribute.Media<
+    CardDescription: Schema.Attribute.String;
+    DescriptionUrl: Schema.Attribute.String;
+    Icon: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    info: Schema.Attribute.Component<'shared.contact-info-block', true>;
-    title: Schema.Attribute.String;
+    Info: Schema.Attribute.Component<'shared.contact-info-block', true>;
+    Title: Schema.Attribute.String;
   };
 }
 
 export interface SharedContactInfoBlock extends Struct.ComponentSchema {
   collectionName: 'components_shared_contact_info_blocks';
   info: {
-    description: '';
     displayName: 'Contact-info-block';
   };
   attributes: {
-    label: Schema.Attribute.String;
-    value: Schema.Attribute.String;
+    Label: Schema.Attribute.String;
+    Value: Schema.Attribute.String;
   };
 }
 
@@ -80,14 +79,13 @@ export interface SharedIconBlock extends Struct.ComponentSchema {
 export interface SharedInfoSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_info_sections';
   info: {
-    description: '';
     displayName: 'info-section';
   };
   attributes: {
-    buttonText: Schema.Attribute.String;
-    buttonUrl: Schema.Attribute.String;
-    description: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    ButtonText: Schema.Attribute.String;
+    ButtonUrl: Schema.Attribute.String;
+    Description: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
   };
 }
 
