@@ -1,5 +1,34 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedContactCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contact_cards';
+  info: {
+    description: '';
+    displayName: 'Contact-card';
+  };
+  attributes: {
+    CardDescription: Schema.Attribute.String;
+    DescriptionUrl: Schema.Attribute.String;
+    Icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    Info: Schema.Attribute.Component<'shared.contact-info-block', true>;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedContactInfoBlock extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contact_info_blocks';
+  info: {
+    displayName: 'Contact-info-block';
+  };
+  attributes: {
+    Label: Schema.Attribute.String;
+    Value: Schema.Attribute.String;
+  };
+}
+
 export interface SharedFeature extends Struct.ComponentSchema {
   collectionName: 'components_shared_features';
   info: {
@@ -10,6 +39,28 @@ export interface SharedFeature extends Struct.ComponentSchema {
     features: Schema.Attribute.Component<'shared.icon-block', true>;
     InnovationDescription: Schema.Attribute.String;
     InnovationTitle: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFooterColumn extends Struct.ComponentSchema {
+  collectionName: 'components_shared_footer_columns';
+  info: {
+    displayName: 'Footer-Column';
+  };
+  attributes: {
+    TextLink: Schema.Attribute.Component<'shared.footer-link', true>;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFooterLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_footer_links';
+  info: {
+    displayName: 'Footer-Link';
+  };
+  attributes: {
+    Text: Schema.Attribute.String;
+    Url: Schema.Attribute.String;
   };
 }
 
@@ -35,41 +86,6 @@ export interface SharedInfoSection extends Struct.ComponentSchema {
     ButtonUrl: Schema.Attribute.String;
     Description: Schema.Attribute.String;
     Title: Schema.Attribute.String;
-  };
-}
-
-export interface SharedMedia extends Struct.ComponentSchema {
-  collectionName: 'components_shared_media';
-  info: {
-    displayName: 'Media';
-    icon: 'file-video';
-  };
-  attributes: {
-    file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-  };
-}
-
-export interface SharedQuote extends Struct.ComponentSchema {
-  collectionName: 'components_shared_quotes';
-  info: {
-    displayName: 'Quote';
-    icon: 'indent';
-  };
-  attributes: {
-    body: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface SharedRichText extends Struct.ComponentSchema {
-  collectionName: 'components_shared_rich_texts';
-  info: {
-    description: '';
-    displayName: 'Rich text';
-    icon: 'align-justify';
-  };
-  attributes: {
-    body: Schema.Attribute.RichText;
   };
 }
 
@@ -115,6 +131,17 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSocialLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_social_links';
+  info: {
+    displayName: 'Social-Link';
+  };
+  attributes: {
+    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Url: Schema.Attribute.String;
+  };
+}
+
 export interface SharedTeamMember extends Struct.ComponentSchema {
   collectionName: 'components_shared_team_members';
   info: {
@@ -131,15 +158,17 @@ export interface SharedTeamMember extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.contact-card': SharedContactCard;
+      'shared.contact-info-block': SharedContactInfoBlock;
       'shared.feature': SharedFeature;
+      'shared.footer-column': SharedFooterColumn;
+      'shared.footer-link': SharedFooterLink;
       'shared.icon-block': SharedIconBlock;
       'shared.info-section': SharedInfoSection;
-      'shared.media': SharedMedia;
-      'shared.quote': SharedQuote;
-      'shared.rich-text': SharedRichText;
       'shared.section-block': SharedSectionBlock;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.social-link': SharedSocialLink;
       'shared.team-member': SharedTeamMember;
     }
   }

@@ -7,4 +7,10 @@ module.exports = ({ env }) => ({
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
+  apiTokenSalt: env('API_TOKEN_SALT', 'someSecretKey123'),
+  adminJwtSecret: env('ADMIN_JWT_SECRET'),
+  jwt: {
+    secret: env('JWT_SECRET'),
+  },
+  transferTokenSalt: env('TRANSFER_TOKEN_SALT'),
 });

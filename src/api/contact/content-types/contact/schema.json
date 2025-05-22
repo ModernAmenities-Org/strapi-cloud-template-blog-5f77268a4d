@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "ctaBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.info-section"
+    },
+    "card": {
+      "displayName": "Contact-card",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.contact-card"
+    }
+  }
+}

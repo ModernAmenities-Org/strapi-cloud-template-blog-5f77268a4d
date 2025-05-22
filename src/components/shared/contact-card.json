@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_contact_cards",
+  "info": {
+    "displayName": "Contact-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Info": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.contact-info-block"
+    },
+    "CardDescription": {
+      "type": "string"
+    },
+    "DescriptionUrl": {
+      "type": "string"
+    }
+  }
+}

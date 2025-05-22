@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feature_values",
+  "info": {
+    "singularName": "feature-value",
+    "pluralName": "feature-values",
+    "displayName": "FeatureValue",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "plan": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::plan.plan"
+    },
+    "feature": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::feature.feature"
+    }
+  }
+}
