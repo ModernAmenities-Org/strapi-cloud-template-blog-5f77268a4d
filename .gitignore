@@ -131,10 +131,4 @@ build
 .strapi-cloud.json
 
 
-config/server.js
-config/admin.js
-config/database.js
-config/server.js
-config/admin.js
-config/database.js
 
