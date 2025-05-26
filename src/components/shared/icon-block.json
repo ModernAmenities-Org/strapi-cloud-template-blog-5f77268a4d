@@ -1,25 +1,30 @@
 {
   "collectionName": "components_shared_icon_blocks",
   "info": {
-    "displayName": "icon-block"
+    "displayName": "icon-block",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Icon": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "string"
+    },
+    "number": {
+      "type": "integer"
     }
   }
 }

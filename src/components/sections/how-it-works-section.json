@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_sections_how_it_works_sections",
+  "info": {
+    "displayName": "howItWorksSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.how-it-works-step"
+    },
+    "featureOffercard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.feature-offer-card"
+    },
+    "heroimage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

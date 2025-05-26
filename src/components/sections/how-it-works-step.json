@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_sections_how_it_works_steps",
+  "info": {
+    "displayName": "howItWorksStep"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "number": {
+      "type": "integer"
+    }
+  }
+}

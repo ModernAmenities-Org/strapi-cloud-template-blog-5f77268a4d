@@ -1,0 +1,70 @@
+{
+  "kind": "singleType",
+  "collectionName": "features",
+  "info": {
+    "singularName": "feature",
+    "pluralName": "features",
+    "displayName": "feature",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.social-link"
+    },
+    "heroBlock": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.hero-section"
+    },
+    "vendLead": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.vend-lead"
+    },
+    
+    "keyBenefitsHeading": {
+      "type": "string"
+    },
+    "keyBenefits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.icon-block"
+    },
+    "howItWorks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.how-it-works-section"
+    },
+    "platinumAdvantage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.platinum-advantage"
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.testimonials-section"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.faq-section"
+    },
+    "ctablock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.info-section"
+    }
+  }
+}
