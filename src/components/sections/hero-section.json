@@ -19,14 +19,20 @@
       "type": "string"
     },
     "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "leadCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.lead-card"
     }
   }
 }

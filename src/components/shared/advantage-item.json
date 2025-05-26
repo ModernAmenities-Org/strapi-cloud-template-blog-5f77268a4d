@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_advantage_items",
+  "info": {
+    "displayName": "AdvantageItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

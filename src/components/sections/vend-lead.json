@@ -15,9 +15,9 @@
     "description": {
       "type": "string"
     },
-    "vendLead": {
+    "leadCard": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "sections.lead-card"
     }
   }
