@@ -185,6 +185,7 @@ export interface SectionsRoadmapSection extends Struct.ComponentSchema {
     displayName: 'Roadmap-section';
   };
   attributes: {
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     card: Schema.Attribute.Component<'shared.card', true>;
     heading: Schema.Attribute.String;
     subheading: Schema.Attribute.String;
@@ -444,9 +445,11 @@ export interface SharedTeamMember extends Struct.ComponentSchema {
 export interface SharedTestimonialsSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_testimonials_sections';
   info: {
+    description: '';
     displayName: 'testimonials-section';
   };
   attributes: {
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     heading: Schema.Attribute.String;
     subHeading: Schema.Attribute.String;
     testimonials: Schema.Attribute.Relation<

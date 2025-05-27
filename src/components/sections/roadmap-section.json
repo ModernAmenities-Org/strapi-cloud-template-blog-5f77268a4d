@@ -17,6 +17,16 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.card"
+    },
+    "bgImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
