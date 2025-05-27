@@ -10,7 +10,7 @@ module.exports = createCoreController(
         "api::modular-dashboard.modular-dashboard",
         {
           populate: {
-            carousel: { populate: { ctaBlock: true } },
+            carousel: { populate: { ctaBlock: true, image: true } },
           },
           fields: ["title", "description"],
         }
