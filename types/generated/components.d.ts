@@ -85,6 +85,29 @@ export interface SectionsHowItWorksStep extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsLandingPageHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_landing_page_hero_sections';
+  info: {
+    description: '';
+    displayName: 'Landing-Hero-section';
+  };
+  attributes: {
+    avatars: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    buttons: Schema.Attribute.Component<'sections.buttons-component', true>;
+    description: Schema.Attribute.String;
+    heroImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    joinText: Schema.Attribute.String;
+    revenue: Schema.Attribute.Component<'sections.revenue-section', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsLeadCard extends Struct.ComponentSchema {
   collectionName: 'components_sections_lead_cards';
   info: {
@@ -179,6 +202,46 @@ export interface SharedAdvantageItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBullets extends Struct.ComponentSchema {
+  collectionName: 'components_shared_bullets';
+  info: {
+    description: '';
+    displayName: 'bullet-point';
+  };
+  attributes: {
+    point: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_cards';
+  info: {
+    displayName: 'card';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCarouselCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_carousel_cards';
+  info: {
+    description: '';
+    displayName: 'carouselCard';
+  };
+  attributes: {
+    bullets: Schema.Attribute.Component<'shared.bullets', true>;
+    button: Schema.Attribute.Component<'sections.buttons-component', false>;
+    iconName: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    key: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedContactCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_contact_cards';
   info: {
@@ -223,11 +286,14 @@ export interface SharedFaq extends Struct.ComponentSchema {
 export interface SharedFaqSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_faq_sections';
   info: {
+    description: '';
     displayName: 'faq-section';
   };
   attributes: {
+    ctaBlock: Schema.Attribute.Component<'shared.info-section', false>;
     faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     heading: Schema.Attribute.Text;
+    subheading: Schema.Attribute.String;
   };
 }
 
@@ -287,6 +353,7 @@ export interface SharedInfoSection extends Struct.ComponentSchema {
     displayName: 'info-section';
   };
   attributes: {
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     buttonText: Schema.Attribute.String;
     buttonUrl: Schema.Attribute.String;
     description: Schema.Attribute.String;

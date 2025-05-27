@@ -1,5 +1,7 @@
 "use strict";
 
+const testimonial = require("../../testimonial/controllers/testimonial");
+
 /**
  * landing-page controller
  */
@@ -13,8 +15,16 @@ module.exports = createCoreController(
       const entity = await strapi.entityService.findMany("api::landing-page.landing-page", {
         populate: {
           hero: { populate: "*" },
-          revenue: { populate: "*" },
-          faq: { populate: "*"},
+          faq: { 
+            populate: {
+                ctaBlock: {
+                  populate: ['bgImage'],
+                },
+                faqs: {
+                    populate: "*",
+                  },
+              }
+          },
           roadmap: {
             populate: {
               card: {
@@ -28,7 +38,20 @@ module.exports = createCoreController(
                 populate: ['icon'],
               },
             },
+          },
+          ecosystem: {
+            populate: {
+              carouselCard: { populate: "*" },
+            },
+          },
+          testimonial: {
+            populate: {
+              testimonials: {
+                populate: ['avatar'],
+              },
+            },
           }
+          
         },
       });
       return entity;

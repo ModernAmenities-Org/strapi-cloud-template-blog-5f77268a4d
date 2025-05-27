@@ -17,6 +17,16 @@
     },
     "buttonUrl": {
       "type": "string"
+    },
+    "bgImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

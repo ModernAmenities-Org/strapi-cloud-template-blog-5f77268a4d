@@ -41,6 +41,11 @@
     },
     "joinText": {
       "type": "string"
+    },
+    "revenue": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.revenue-section"
     }
   }
 }

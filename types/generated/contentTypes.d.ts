@@ -688,6 +688,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ecosystem: Schema.Attribute.Component<'sections.ecosystem', false>;
     faq: Schema.Attribute.Component<'shared.faq-section', false>;
     feature: Schema.Attribute.Component<'sections.roadmap-section', false>;
     hero: Schema.Attribute.Component<
@@ -701,8 +702,11 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    revenue: Schema.Attribute.Component<'sections.revenue-section', true>;
     roadmap: Schema.Attribute.Component<'sections.roadmap-section', false>;
+    testimonial: Schema.Attribute.Component<
+      'shared.testimonials-section',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

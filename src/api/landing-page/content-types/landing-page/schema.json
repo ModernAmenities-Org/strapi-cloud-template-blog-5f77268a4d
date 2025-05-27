@@ -16,11 +16,6 @@
       "repeatable": false,
       "component": "sections.landing-page-hero-section"
     },
-    "revenue": {
-      "type": "component",
-      "repeatable": true,
-      "component": "sections.revenue-section"
-    },
     "faq": {
       "type": "component",
       "repeatable": false,
@@ -35,6 +30,16 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.roadmap-section"
+    },
+    "ecosystem": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.ecosystem"
+    },
+    "testimonial": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.testimonials-section"
     }
   }
 }
