@@ -11,6 +11,18 @@ export interface SectionsButtonsComponent extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsEcosystem extends Struct.ComponentSchema {
+  collectionName: 'components_sections_ecosystems';
+  info: {
+    displayName: 'ecosystem';
+  };
+  attributes: {
+    carouselCard: Schema.Attribute.Component<'shared.carousel-card', true>;
+    heading: Schema.Attribute.String;
+    subheading: Schema.Attribute.Text;
+  };
+}
+
 export interface SectionsHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_hero_sections';
   info: {
@@ -106,6 +118,17 @@ export interface SectionsVendLead extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBullets extends Struct.ComponentSchema {
+  collectionName: 'components_shared_bullets';
+  info: {
+    description: '';
+    displayName: 'bullet-point';
+  };
+  attributes: {
+    point: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_cards';
   info: {
@@ -114,6 +137,23 @@ export interface SharedCard extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCarouselCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_carousel_cards';
+  info: {
+    description: '';
+    displayName: 'carouselCard';
+  };
+  attributes: {
+    bullets: Schema.Attribute.Component<'shared.bullets', true>;
+    button: Schema.Attribute.Component<'sections.buttons-component', false>;
+    iconName: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    key: Schema.Attribute.String;
+    label: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -315,13 +355,16 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'sections.buttons-component': SectionsButtonsComponent;
+      'sections.ecosystem': SectionsEcosystem;
       'sections.hero-section': SectionsHeroSection;
       'sections.landing-page-hero-section': SectionsLandingPageHeroSection;
       'sections.lead-card': SectionsLeadCard;
       'sections.revenue-section': SectionsRevenueSection;
       'sections.roadmap-section': SectionsRoadmapSection;
       'sections.vend-lead': SectionsVendLead;
+      'shared.bullets': SharedBullets;
       'shared.card': SharedCard;
+      'shared.carousel-card': SharedCarouselCard;
       'shared.contact-card': SharedContactCard;
       'shared.contact-info-block': SharedContactInfoBlock;
       'shared.faq': SharedFaq;

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_ecosystems",
+  "info": {
+    "displayName": "ecosystem"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subheading": {
+      "type": "text"
+    },
+    "carouselCard": {
+      "displayName": "carouselCard",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.carousel-card"
+    }
+  }
+}
