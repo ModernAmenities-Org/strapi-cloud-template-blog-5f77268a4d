@@ -673,6 +673,46 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
+  collectionName: 'landing_pages';
+  info: {
+    description: '';
+    displayName: 'LandingPage';
+    pluralName: 'landing-pages';
+    singularName: 'landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ecosystem: Schema.Attribute.Component<'sections.ecosystem', false>;
+    faq: Schema.Attribute.Component<'shared.faq-section', false>;
+    feature: Schema.Attribute.Component<'sections.roadmap-section', false>;
+    hero: Schema.Attribute.Component<
+      'sections.landing-page-hero-section',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::landing-page.landing-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    roadmap: Schema.Attribute.Component<'sections.roadmap-section', false>;
+    testimonial: Schema.Attribute.Component<
+      'shared.testimonials-section',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiModularDashboardModularDashboard
   extends Struct.SingleTypeSchema {
   collectionName: 'modular_dashboards';
@@ -1326,6 +1366,7 @@ declare module '@strapi/strapi' {
       'api::feature.feature': ApiFeatureFeature;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
+      'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::modular-dashboard.modular-dashboard': ApiModularDashboardModularDashboard;
       'api::plan-feature.plan-feature': ApiPlanFeaturePlanFeature;
       'api::pricing.pricing': ApiPricingPricing;

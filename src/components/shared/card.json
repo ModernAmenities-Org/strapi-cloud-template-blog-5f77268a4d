@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_shared_info_sections",
+  "collectionName": "components_shared_cards",
   "info": {
-    "displayName": "info-section",
-    "description": ""
+    "displayName": "card"
   },
   "options": {},
   "attributes": {
@@ -10,15 +9,9 @@
       "type": "string"
     },
     "description": {
-      "type": "string"
+      "type": "text"
     },
-    "buttonText": {
-      "type": "string"
-    },
-    "buttonUrl": {
-      "type": "string"
-    },
-    "bgImage": {
+    "icon": {
       "allowedTypes": [
         "images",
         "files",
