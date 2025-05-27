@@ -674,7 +674,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 }
 
 export interface ApiModularDashboardModularDashboard
-  extends Struct.CollectionTypeSchema {
+  extends Struct.SingleTypeSchema {
   collectionName: 'modular_dashboards';
   info: {
     description: 'A dashboard with modular items.';

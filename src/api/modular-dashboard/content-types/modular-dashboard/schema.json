@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "modular_dashboards",
   "info": {
     "singularName": "modular-dashboard",
