@@ -82,6 +82,19 @@ export interface SectionsLeadCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsPlanFeatureSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_plan_feature_sections';
+  info: {
+    displayName: 'Plan-feature-section';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    subTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsPlatinumAdvantage extends Struct.ComponentSchema {
   collectionName: 'components_sections_platinum_advantages';
   info: {
@@ -311,6 +324,7 @@ declare module '@strapi/strapi' {
       'sections.how-it-works-section': SectionsHowItWorksSection;
       'sections.how-it-works-step': SectionsHowItWorksStep;
       'sections.lead-card': SectionsLeadCard;
+      'sections.plan-feature-section': SectionsPlanFeatureSection;
       'sections.platinum-advantage': SectionsPlatinumAdvantage;
       'sections.vend-lead': SectionsVendLead;
       'shared.advantage-item': SharedAdvantageItem;
