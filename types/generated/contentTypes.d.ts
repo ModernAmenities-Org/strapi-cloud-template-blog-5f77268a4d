@@ -713,6 +713,41 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiModularDashboardModularDashboard
+  extends Struct.SingleTypeSchema {
+  collectionName: 'modular_dashboards';
+  info: {
+    description: 'A dashboard with modular items.';
+    displayName: 'Modular Dashboard';
+    pluralName: 'modular-dashboards';
+    singularName: 'modular-dashboard';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    carousel: Schema.Attribute.Component<
+      'sections.modular-dashboard-carousel-item',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::modular-dashboard.modular-dashboard'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPlanFeaturePlanFeature extends Struct.CollectionTypeSchema {
   collectionName: 'plan_features';
   info: {
@@ -1332,6 +1367,7 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
+      'api::modular-dashboard.modular-dashboard': ApiModularDashboardModularDashboard;
       'api::plan-feature.plan-feature': ApiPlanFeaturePlanFeature;
       'api::pricing.pricing': ApiPricingPricing;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;

@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "modular_dashboards",
+  "info": {
+    "singularName": "modular-dashboard",
+    "pluralName": "modular-dashboards",
+    "displayName": "Modular Dashboard",
+    "description": "A dashboard with modular items."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "carousel": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.modular-dashboard-carousel-item"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
