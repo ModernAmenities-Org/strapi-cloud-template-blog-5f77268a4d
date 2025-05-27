@@ -11,7 +11,7 @@ module.exports = createCoreController("api::about.about", ({ strapi }) => ({
     const entity = await strapi.entityService.findMany("api::about.about", {
       populate: {
         ourStory: { populate: ["Images"] },
-        poweredInnovation: { populate: { features: { populate: ["Icon"] } } },
+        poweredInnovation: { populate: { features: { populate: ["icon"] } } },
         vision: { populate: ["Images"] },
         ctaBlock: true,
       },

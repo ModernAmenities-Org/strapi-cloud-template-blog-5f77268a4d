@@ -561,6 +561,55 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFeatureFeature extends Struct.SingleTypeSchema {
+  collectionName: 'features';
+  info: {
+    description: '';
+    displayName: 'Feature';
+    pluralName: 'features';
+    singularName: 'feature';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctablock: Schema.Attribute.Component<'shared.info-section', false>;
+    faq: Schema.Attribute.Component<'shared.faq-section', false>;
+    heroBlock: Schema.Attribute.Component<'sections.hero-section', true>;
+    howItWorks: Schema.Attribute.Component<
+      'sections.how-it-works-section',
+      false
+    >;
+    icon: Schema.Attribute.Component<'shared.social-link', false>;
+    keyBenefits: Schema.Attribute.Component<'shared.icon-block', true>;
+    keyBenefitsHeading: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::feature.feature'
+    > &
+      Schema.Attribute.Private;
+    platinumAdvantage: Schema.Attribute.Component<
+      'sections.platinum-advantage',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    testimonials: Schema.Attribute.Component<
+      'shared.testimonials-section',
+      false
+    >;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vendLead: Schema.Attribute.Component<'sections.vend-lead', false>;
+  };
+}
+
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -686,6 +735,42 @@ export interface ApiPlanFeaturePlanFeature extends Struct.CollectionTypeSchema {
     platinum_value: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     silver_value: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPricingPricing extends Struct.SingleTypeSchema {
+  collectionName: 'pricings';
+  info: {
+    description: '';
+    displayName: 'Pricing';
+    pluralName: 'pricings';
+    singularName: 'pricing';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pricing.pricing'
+    > &
+      Schema.Attribute.Private;
+    plan_features: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::plan-feature.plan-feature'
+    >;
+    pricingHeader: Schema.Attribute.Component<
+      'sections.plan-feature-section',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1239,10 +1324,12 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::faq.faq': ApiFaqFaq;
+      'api::feature.feature': ApiFeatureFeature;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::plan-feature.plan-feature': ApiPlanFeaturePlanFeature;
+      'api::pricing.pricing': ApiPricingPricing;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
