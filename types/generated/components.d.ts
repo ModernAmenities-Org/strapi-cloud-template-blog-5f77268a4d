@@ -82,6 +82,20 @@ export interface SectionsLeadCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsModularDashboardCarouselItem
+  extends Struct.ComponentSchema {
+  collectionName: 'components_sections_modular_dashboard_carousel_items';
+  info: {
+    displayName: 'Modular-Dashboard-Carousel-Item';
+  };
+  attributes: {
+    ctaBlock: Schema.Attribute.Component<'shared.info-section', false>;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionsPlanFeatureSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_plan_feature_sections';
   info: {
@@ -324,6 +338,7 @@ declare module '@strapi/strapi' {
       'sections.how-it-works-section': SectionsHowItWorksSection;
       'sections.how-it-works-step': SectionsHowItWorksStep;
       'sections.lead-card': SectionsLeadCard;
+      'sections.modular-dashboard-carousel-item': SectionsModularDashboardCarouselItem;
       'sections.plan-feature-section': SectionsPlanFeatureSection;
       'sections.platinum-advantage': SectionsPlatinumAdvantage;
       'sections.vend-lead': SectionsVendLead;
