@@ -565,7 +565,7 @@ export interface ApiFeatureFeature extends Struct.SingleTypeSchema {
   collectionName: 'features';
   info: {
     description: '';
-    displayName: 'feature';
+    displayName: 'Feature';
     pluralName: 'features';
     singularName: 'feature';
   };
@@ -699,6 +699,42 @@ export interface ApiPlanFeaturePlanFeature extends Struct.CollectionTypeSchema {
     platinum_value: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     silver_value: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPricingPricing extends Struct.SingleTypeSchema {
+  collectionName: 'pricings';
+  info: {
+    description: '';
+    displayName: 'Pricing';
+    pluralName: 'pricings';
+    singularName: 'pricing';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pricing.pricing'
+    > &
+      Schema.Attribute.Private;
+    plan_features: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::plan-feature.plan-feature'
+    >;
+    pricingHeader: Schema.Attribute.Component<
+      'sections.plan-feature-section',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1256,6 +1292,7 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::plan-feature.plan-feature': ApiPlanFeaturePlanFeature;
+      'api::pricing.pricing': ApiPricingPricing;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

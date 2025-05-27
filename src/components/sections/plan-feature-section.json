@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_plan_feature_sections",
+  "info": {
+    "displayName": "Plan-feature-section"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    }
+  }
+}
