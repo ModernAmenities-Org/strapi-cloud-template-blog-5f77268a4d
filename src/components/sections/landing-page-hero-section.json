@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_sections_landing_page_hero_sections",
+  "info": {
+    "displayName": "Landing-Hero-section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.buttons-component"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "avatars": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "joinText": {
+      "type": "string"
+    }
+  }
+}

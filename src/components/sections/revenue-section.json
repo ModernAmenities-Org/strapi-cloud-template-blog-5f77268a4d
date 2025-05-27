@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_revenue_sections",
+  "info": {
+    "displayName": "Revenue-section"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

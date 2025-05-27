@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SectionsButtonsComponent extends Struct.ComponentSchema {
+  collectionName: 'components_sections_buttons_components';
+  info: {
+    displayName: 'ButtonsComponent';
+  };
+  attributes: {
+    buttonText: Schema.Attribute.String;
+    buttonUrl: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_hero_sections';
   info: {
@@ -11,6 +22,28 @@ export interface SectionsHeroSection extends Struct.ComponentSchema {
     buttonUrl: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     heroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsLandingPageHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_landing_page_hero_sections';
+  info: {
+    description: '';
+    displayName: 'Landing-Hero-section';
+  };
+  attributes: {
+    avatars: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    buttons: Schema.Attribute.Component<'sections.buttons-component', true>;
+    description: Schema.Attribute.String;
+    heroImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    joinText: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -35,6 +68,30 @@ export interface SectionsLeadCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsRevenueSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_revenue_sections';
+  info: {
+    displayName: 'Revenue-section';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsRoadmapSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_roadmap_sections';
+  info: {
+    description: '';
+    displayName: 'Roadmap-section';
+  };
+  attributes: {
+    card: Schema.Attribute.Component<'shared.card', true>;
+    heading: Schema.Attribute.String;
+    subheading: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsVendLead extends Struct.ComponentSchema {
   collectionName: 'components_sections_vend_leads';
   info: {
@@ -46,6 +103,18 @@ export interface SectionsVendLead extends Struct.ComponentSchema {
     heading: Schema.Attribute.String;
     title: Schema.Attribute.String;
     vendLead: Schema.Attribute.Component<'sections.lead-card', true>;
+  };
+}
+
+export interface SharedCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_cards';
+  info: {
+    displayName: 'card';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -75,6 +144,18 @@ export interface SharedContactInfoBlock extends Struct.ComponentSchema {
   attributes: {
     Label: Schema.Attribute.String;
     Value: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFaq extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faqs';
+  info: {
+    displayName: 'faq';
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    order: Schema.Attribute.Integer;
+    question: Schema.Attribute.String;
   };
 }
 
@@ -233,11 +314,17 @@ export interface SharedTestimonialsSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'sections.buttons-component': SectionsButtonsComponent;
       'sections.hero-section': SectionsHeroSection;
+      'sections.landing-page-hero-section': SectionsLandingPageHeroSection;
       'sections.lead-card': SectionsLeadCard;
+      'sections.revenue-section': SectionsRevenueSection;
+      'sections.roadmap-section': SectionsRoadmapSection;
       'sections.vend-lead': SectionsVendLead;
+      'shared.card': SharedCard;
       'shared.contact-card': SharedContactCard;
       'shared.contact-info-block': SharedContactInfoBlock;
+      'shared.faq': SharedFaq;
       'shared.faq-section': SharedFaqSection;
       'shared.feature': SharedFeature;
       'shared.footer-column': SharedFooterColumn;
