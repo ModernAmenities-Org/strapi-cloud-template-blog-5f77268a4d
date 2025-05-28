@@ -565,7 +565,7 @@ export interface ApiFeatureFeature extends Struct.SingleTypeSchema {
   collectionName: 'features';
   info: {
     description: '';
-    displayName: 'feature';
+    displayName: 'Feature';
     pluralName: 'features';
     singularName: 'feature';
   };
@@ -598,7 +598,7 @@ export interface ApiFeatureFeature extends Struct.SingleTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
-    testimonials: Schema.Attribute.Component<
+    testimonial: Schema.Attribute.Component<
       'shared.testimonials-section',
       false
     >;
@@ -708,6 +708,7 @@ export interface ApiPlanFeaturePlanFeature extends Struct.CollectionTypeSchema {
 export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   collectionName: 'testimonials';
   info: {
+    description: '';
     displayName: 'Testimonial';
     pluralName: 'testimonials';
     singularName: 'testimonial';

@@ -250,9 +250,11 @@ export interface SharedTeamMember extends Struct.ComponentSchema {
 export interface SharedTestimonialsSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_testimonials_sections';
   info: {
+    description: '';
     displayName: 'testimonials-section';
   };
   attributes: {
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     heading: Schema.Attribute.String;
     subHeading: Schema.Attribute.String;
     testimonials: Schema.Attribute.Relation<
