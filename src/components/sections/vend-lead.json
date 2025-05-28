@@ -15,10 +15,15 @@
     "description": {
       "type": "string"
     },
-    "leadCard": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.lead-card"
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
