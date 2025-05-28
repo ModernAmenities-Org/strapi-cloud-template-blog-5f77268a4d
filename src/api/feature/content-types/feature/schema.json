@@ -50,11 +50,6 @@
       "repeatable": false,
       "component": "sections.platinum-advantage"
     },
-    "testimonials": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.testimonials-section"
-    },
     "faq": {
       "type": "component",
       "repeatable": false,
@@ -64,6 +59,11 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.info-section"
+    },
+    "testimonial": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.testimonials-section"
     }
   }
 }

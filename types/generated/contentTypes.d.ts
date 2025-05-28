@@ -598,7 +598,7 @@ export interface ApiFeatureFeature extends Struct.SingleTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
-    testimonials: Schema.Attribute.Component<
+    testimonial: Schema.Attribute.Component<
       'shared.testimonials-section',
       false
     >;
@@ -819,6 +819,7 @@ export interface ApiPricingPricing extends Struct.SingleTypeSchema {
 export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   collectionName: 'testimonials';
   info: {
+    description: '';
     displayName: 'Testimonial';
     pluralName: 'testimonials';
     singularName: 'testimonial';
