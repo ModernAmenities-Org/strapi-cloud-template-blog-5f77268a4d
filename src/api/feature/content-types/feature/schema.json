@@ -24,7 +24,7 @@
     },
     "heroBlock": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "sections.hero-section"
     },
     "vendLead": {
