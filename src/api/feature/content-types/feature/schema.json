@@ -32,7 +32,6 @@
       "repeatable": false,
       "component": "sections.vend-lead"
     },
-    
     "keyBenefitsHeading": {
       "type": "string"
     },
