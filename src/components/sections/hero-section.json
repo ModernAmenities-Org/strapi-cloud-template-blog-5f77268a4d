@@ -28,11 +28,6 @@
         "videos",
         "audios"
       ]
-    },
-    "leadCard": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.lead-card"
     }
   }
 }
