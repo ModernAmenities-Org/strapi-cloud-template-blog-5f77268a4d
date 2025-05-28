@@ -1,22 +1,22 @@
 {
-  "collectionName": "components_shared_info_sections",
+  "collectionName": "components_sections_roadmap_sections",
   "info": {
-    "displayName": "info-section",
+    "displayName": "Roadmap-section",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
+    "heading": {
       "type": "string"
     },
-    "description": {
+    "subheading": {
       "type": "string"
     },
-    "buttonText": {
-      "type": "string"
-    },
-    "buttonUrl": {
-      "type": "string"
+    "card": {
+      "displayName": "card",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.card"
     },
     "bgImage": {
       "allowedTypes": [

@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_shared_carousel_cards",
+  "info": {
+    "displayName": "carouselCard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    },
+    "iconName": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "bullets": {
+      "displayName": "Bullets",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.bullets"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.buttons-component"
+    }
+  }
+}

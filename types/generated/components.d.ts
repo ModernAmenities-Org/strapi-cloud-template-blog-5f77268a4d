@@ -1,5 +1,28 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SectionsButtonsComponent extends Struct.ComponentSchema {
+  collectionName: 'components_sections_buttons_components';
+  info: {
+    displayName: 'ButtonsComponent';
+  };
+  attributes: {
+    buttonText: Schema.Attribute.String;
+    buttonUrl: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsEcosystem extends Struct.ComponentSchema {
+  collectionName: 'components_sections_ecosystems';
+  info: {
+    displayName: 'ecosystem';
+  };
+  attributes: {
+    carouselCard: Schema.Attribute.Component<'shared.carousel-card', true>;
+    heading: Schema.Attribute.String;
+    subheading: Schema.Attribute.Text;
+  };
+}
+
 export interface SectionsHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_hero_sections';
   info: {
@@ -38,6 +61,29 @@ export interface SectionsHowItWorksStep extends Struct.ComponentSchema {
     description: Schema.Attribute.String & Schema.Attribute.Required;
     number: Schema.Attribute.Integer;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionsLandingPageHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_landing_page_hero_sections';
+  info: {
+    description: '';
+    displayName: 'Landing-Hero-section';
+  };
+  attributes: {
+    avatars: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    buttons: Schema.Attribute.Component<'sections.buttons-component', true>;
+    description: Schema.Attribute.String;
+    heroImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    joinText: Schema.Attribute.String;
+    revenue: Schema.Attribute.Component<'sections.revenue-section', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -80,6 +126,31 @@ export interface SectionsPlatinumAdvantage extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsRevenueSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_revenue_sections';
+  info: {
+    displayName: 'Revenue-section';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsRoadmapSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_roadmap_sections';
+  info: {
+    description: '';
+    displayName: 'Roadmap-section';
+  };
+  attributes: {
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    card: Schema.Attribute.Component<'shared.card', true>;
+    heading: Schema.Attribute.String;
+    subheading: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsVendLead extends Struct.ComponentSchema {
   collectionName: 'components_sections_vend_leads';
   info: {
@@ -101,6 +172,46 @@ export interface SharedAdvantageItem extends Struct.ComponentSchema {
     displayName: 'AdvantageItem';
   };
   attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedBullets extends Struct.ComponentSchema {
+  collectionName: 'components_shared_bullets';
+  info: {
+    description: '';
+    displayName: 'bullet-point';
+  };
+  attributes: {
+    point: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_cards';
+  info: {
+    displayName: 'card';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedCarouselCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_carousel_cards';
+  info: {
+    description: '';
+    displayName: 'carouselCard';
+  };
+  attributes: {
+    bullets: Schema.Attribute.Component<'shared.bullets', true>;
+    button: Schema.Attribute.Component<'sections.buttons-component', false>;
+    iconName: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    key: Schema.Attribute.String;
+    label: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -134,14 +245,29 @@ export interface SharedContactInfoBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFaq extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faqs';
+  info: {
+    displayName: 'faq';
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    order: Schema.Attribute.Integer;
+    question: Schema.Attribute.String;
+  };
+}
+
 export interface SharedFaqSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_faq_sections';
   info: {
+    description: '';
     displayName: 'faq-section';
   };
   attributes: {
+    ctaBlock: Schema.Attribute.Component<'shared.info-section', false>;
     faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     heading: Schema.Attribute.Text;
+    subheading: Schema.Attribute.String;
   };
 }
 
@@ -201,6 +327,7 @@ export interface SharedInfoSection extends Struct.ComponentSchema {
     displayName: 'info-section';
   };
   attributes: {
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     buttonText: Schema.Attribute.String;
     buttonUrl: Schema.Attribute.String;
     description: Schema.Attribute.String;
@@ -277,9 +404,11 @@ export interface SharedTeamMember extends Struct.ComponentSchema {
 export interface SharedTestimonialsSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_testimonials_sections';
   info: {
+    description: '';
     displayName: 'testimonials-section';
   };
   attributes: {
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     heading: Schema.Attribute.String;
     subHeading: Schema.Attribute.String;
     testimonials: Schema.Attribute.Relation<
@@ -292,16 +421,25 @@ export interface SharedTestimonialsSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'sections.buttons-component': SectionsButtonsComponent;
+      'sections.ecosystem': SectionsEcosystem;
       'sections.hero-section': SectionsHeroSection;
       'sections.how-it-works-section': SectionsHowItWorksSection;
       'sections.how-it-works-step': SectionsHowItWorksStep;
+      'sections.landing-page-hero-section': SectionsLandingPageHeroSection;
       'sections.modular-dashboard-carousel-item': SectionsModularDashboardCarouselItem;
       'sections.plan-feature-section': SectionsPlanFeatureSection;
       'sections.platinum-advantage': SectionsPlatinumAdvantage;
+      'sections.revenue-section': SectionsRevenueSection;
+      'sections.roadmap-section': SectionsRoadmapSection;
       'sections.vend-lead': SectionsVendLead;
       'shared.advantage-item': SharedAdvantageItem;
+      'shared.bullets': SharedBullets;
+      'shared.card': SharedCard;
+      'shared.carousel-card': SharedCarouselCard;
       'shared.contact-card': SharedContactCard;
       'shared.contact-info-block': SharedContactInfoBlock;
+      'shared.faq': SharedFaq;
       'shared.faq-section': SharedFaqSection;
       'shared.feature': SharedFeature;
       'shared.footer-column': SharedFooterColumn;
