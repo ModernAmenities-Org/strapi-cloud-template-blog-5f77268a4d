@@ -24,7 +24,7 @@
     },
     "heroBlock": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "sections.hero-section"
     },
     "vendLead": {
@@ -32,7 +32,6 @@
       "repeatable": false,
       "component": "sections.vend-lead"
     },
-    
     "keyBenefitsHeading": {
       "type": "string"
     },

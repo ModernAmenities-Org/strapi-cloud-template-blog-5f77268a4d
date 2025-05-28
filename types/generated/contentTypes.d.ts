@@ -578,7 +578,7 @@ export interface ApiFeatureFeature extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     ctablock: Schema.Attribute.Component<'shared.info-section', false>;
     faq: Schema.Attribute.Component<'shared.faq-section', false>;
-    heroBlock: Schema.Attribute.Component<'sections.hero-section', true>;
+    heroBlock: Schema.Attribute.Component<'sections.hero-section', false>;
     howItWorks: Schema.Attribute.Component<
       'sections.how-it-works-section',
       false

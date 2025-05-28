@@ -17,20 +17,16 @@
       "repeatable": true,
       "component": "sections.how-it-works-step"
     },
-    "featureOffercard": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.feature-offer-card"
-    },
-    "heroimage": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
