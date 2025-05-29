@@ -32,13 +32,11 @@
       "repeatable": false,
       "component": "sections.vend-lead"
     },
-    "keyBenefitsHeading": {
-      "type": "string"
-    },
     "keyBenefits": {
+      "displayName": "keyBenefits",
       "type": "component",
-      "repeatable": true,
-      "component": "shared.icon-block"
+      "repeatable": false,
+      "component": "sections.key-benefits"
     },
     "howItWorks": {
       "type": "component",

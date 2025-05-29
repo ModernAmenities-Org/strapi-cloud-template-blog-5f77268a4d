@@ -64,6 +64,18 @@ export interface SectionsHowItWorksStep extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsKeyBenefits extends Struct.ComponentSchema {
+  collectionName: 'components_sections_key_benefits';
+  info: {
+    displayName: 'keyBenefits';
+  };
+  attributes: {
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    card: Schema.Attribute.Component<'shared.card', true>;
+    heading: Schema.Attribute.Text;
+  };
+}
+
 export interface SectionsLandingPageHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_landing_page_hero_sections';
   info: {
@@ -158,7 +170,7 @@ export interface SectionsVendLead extends Struct.ComponentSchema {
     displayName: 'vend-Lead';
   };
   attributes: {
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
@@ -426,6 +438,7 @@ declare module '@strapi/strapi' {
       'sections.hero-section': SectionsHeroSection;
       'sections.how-it-works-section': SectionsHowItWorksSection;
       'sections.how-it-works-step': SectionsHowItWorksStep;
+      'sections.key-benefits': SectionsKeyBenefits;
       'sections.landing-page-hero-section': SectionsLandingPageHeroSection;
       'sections.modular-dashboard-carousel-item': SectionsModularDashboardCarouselItem;
       'sections.plan-feature-section': SectionsPlanFeatureSection;
