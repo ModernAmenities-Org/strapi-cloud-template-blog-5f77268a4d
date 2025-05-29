@@ -13,14 +13,6 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq.faq"
-    },
-    "subheading": {
-      "type": "string"
-    },
-    "ctaBlock": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.info-section"
     }
   }
 }
