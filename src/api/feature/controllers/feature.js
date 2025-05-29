@@ -26,12 +26,19 @@ module.exports = createCoreController("api::feature.feature", ({ strapi }) => ({
       },
       keyBenefits: {
         populate: {
-          icon: true,
+          card: {
+            populate: {
+              icon: true,
+            },
+          },
+          bgImage: true,
         },
+
       },
       howItWorks: {
         populate: {
           image: true,
+          steps: true,
         },
       },
       platinumAdvantage: {
@@ -47,7 +54,13 @@ module.exports = createCoreController("api::feature.feature", ({ strapi }) => ({
           bgImage: { populate: "*" },
         },
       },
-      faq: true,
+      faq: {
+        populate: {
+          faqs: {
+            populate: "*",
+          },
+        },
+      },
       ctablock: true,
     };
 

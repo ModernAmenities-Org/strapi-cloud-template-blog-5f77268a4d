@@ -584,8 +584,7 @@ export interface ApiFeatureFeature extends Struct.SingleTypeSchema {
       false
     >;
     icon: Schema.Attribute.Component<'shared.social-link', false>;
-    keyBenefits: Schema.Attribute.Component<'shared.icon-block', true>;
-    keyBenefitsHeading: Schema.Attribute.String;
+    keyBenefits: Schema.Attribute.Component<'sections.key-benefits', false>;
     label: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
