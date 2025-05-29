@@ -55,13 +55,13 @@ module.exports = createCoreController("api::feature.feature", ({ strapi }) => ({
         },
       },
       faq: {
+        populate: ["faqs"]
+      },
+      ctablock: {
         populate: {
-          faqs: {
-            populate: "*",
-          },
+          bgImage: { populate: "*" },
         },
       },
-      ctablock: true,
     };
 
     const entity = await strapi.entityService.findOne("api::feature.feature", 1, {

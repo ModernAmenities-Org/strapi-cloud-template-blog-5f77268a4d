@@ -276,10 +276,8 @@ export interface SharedFaqSection extends Struct.ComponentSchema {
     displayName: 'faq-section';
   };
   attributes: {
-    ctaBlock: Schema.Attribute.Component<'shared.info-section', false>;
     faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     heading: Schema.Attribute.Text;
-    subheading: Schema.Attribute.String;
   };
 }
 
