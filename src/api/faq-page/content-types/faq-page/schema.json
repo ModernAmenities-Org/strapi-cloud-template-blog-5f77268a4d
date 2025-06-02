@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "footer_faqs",
+  "collectionName": "faq_pages",
   "info": {
-    "singularName": "footer-faq",
-    "pluralName": "footer-faqs",
-    "displayName": "Footer Faq",
+    "singularName": "faq-page",
+    "pluralName": "faq-pages",
+    "displayName": "FaqPage",
     "description": ""
   },
   "options": {
@@ -14,7 +14,7 @@
     "heading": {
       "type": "text"
     },
-    "items": {
+    "faqItems": {
       "type": "component",
       "repeatable": true,
       "component": "sections.footer-faq-section"

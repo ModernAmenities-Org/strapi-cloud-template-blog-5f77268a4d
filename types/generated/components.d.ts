@@ -26,10 +26,11 @@ export interface SectionsEcosystem extends Struct.ComponentSchema {
 export interface SectionsFooterFaqSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_footer_faq_sections';
   info: {
-    displayName: 'Footer-Faq-Section';
+    description: '';
+    displayName: 'Faq-Section';
   };
   attributes: {
-    footerfaqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     title: Schema.Attribute.Text;
   };
 }

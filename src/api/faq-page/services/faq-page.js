@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * footer-faq service
+ * faq-page service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::footer-faq.footer-faq');
+module.exports = createCoreService('api::faq-page.faq-page');

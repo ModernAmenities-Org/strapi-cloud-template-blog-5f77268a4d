@@ -1,14 +1,15 @@
 {
   "collectionName": "components_sections_footer_faq_sections",
   "info": {
-    "displayName": "Footer-Faq-Section"
+    "displayName": "Faq-Section",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "text"
     },
-    "footerfaqs": {
+    "faqs": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq.faq"

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * footer-faq controller
+ * faq-page controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::footer-faq.footer-faq');
+module.exports = createCoreController('api::faq-page.faq-page');

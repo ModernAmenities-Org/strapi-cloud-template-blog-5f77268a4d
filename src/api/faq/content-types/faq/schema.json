@@ -11,9 +11,6 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "title": {
-      "type": "text"
-    },
     "question": {
       "type": "text"
     },
