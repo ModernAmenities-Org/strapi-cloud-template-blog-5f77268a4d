@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "footer_faqs",
+  "info": {
+    "singularName": "footer-faq",
+    "pluralName": "footer-faqs",
+    "displayName": "Footer Faq",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heading": {
+      "type": "text"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.footer-faq-section"
+    }
+  }
+}

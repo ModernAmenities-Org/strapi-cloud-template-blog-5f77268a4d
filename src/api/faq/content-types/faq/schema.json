@@ -4,12 +4,16 @@
   "info": {
     "singularName": "faq",
     "pluralName": "faqs",
-    "displayName": "Faq"
+    "displayName": "Faq",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
+    "title": {
+      "type": "text"
+    },
     "question": {
       "type": "text"
     },

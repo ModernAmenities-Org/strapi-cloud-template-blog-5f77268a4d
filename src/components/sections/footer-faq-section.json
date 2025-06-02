@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_sections_footer_faq_sections",
+  "info": {
+    "displayName": "Footer-Faq-Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "footerfaqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
+    }
+  }
+}

@@ -23,6 +23,17 @@ export interface SectionsEcosystem extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsFooterFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_footer_faq_sections';
+  info: {
+    displayName: 'Footer-Faq-Section';
+  };
+  attributes: {
+    footerfaqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+    title: Schema.Attribute.Text;
+  };
+}
+
 export interface SectionsHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_hero_sections';
   info: {
@@ -458,6 +469,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'sections.buttons-component': SectionsButtonsComponent;
       'sections.ecosystem': SectionsEcosystem;
+      'sections.footer-faq-section': SectionsFooterFaqSection;
       'sections.hero-section': SectionsHeroSection;
       'sections.how-it-works-section': SectionsHowItWorksSection;
       'sections.how-it-works-step': SectionsHowItWorksStep;
