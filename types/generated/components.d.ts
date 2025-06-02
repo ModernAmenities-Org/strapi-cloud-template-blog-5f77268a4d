@@ -257,6 +257,29 @@ export interface SharedContactInfoBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedDetailsItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_details_items';
+  info: {
+    displayName: 'Details-item';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedDetailsSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_details_sections';
+  info: {
+    description: '';
+    displayName: 'Details-section';
+  };
+  attributes: {
+    detailsItem: Schema.Attribute.Component<'shared.details-item', true>;
+    heading: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedFaq extends Struct.ComponentSchema {
   collectionName: 'components_shared_faqs';
   info: {
@@ -452,6 +475,8 @@ declare module '@strapi/strapi' {
       'shared.carousel-card': SharedCarouselCard;
       'shared.contact-card': SharedContactCard;
       'shared.contact-info-block': SharedContactInfoBlock;
+      'shared.details-item': SharedDetailsItem;
+      'shared.details-section': SharedDetailsSection;
       'shared.faq': SharedFaq;
       'shared.faq-section': SharedFaqSection;
       'shared.feature': SharedFeature;
