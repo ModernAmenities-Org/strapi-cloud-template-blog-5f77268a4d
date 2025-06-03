@@ -6,10 +6,10 @@
   },
   "options": {},
   "attributes": {
-    "InnovationTitle": {
+    "innovationTitle": {
       "type": "string"
     },
-    "InnovationDescription": {
+    "innovationDescription": {
       "type": "string"
     },
     "features": {

@@ -1,21 +1,23 @@
 {
   "collectionName": "components_shared_social_links",
   "info": {
-    "displayName": "Social-Link"
+    "displayName": "Social-Link",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Icon": {
+    "heroIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "Url": {
+    "url": {
       "type": "string"
     }
   }
