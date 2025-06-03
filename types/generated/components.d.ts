@@ -272,6 +272,7 @@ export interface SharedContactInfoBlock extends Struct.ComponentSchema {
 export interface SharedDetailsItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_details_items';
   info: {
+    description: '';
     displayName: 'Details-item';
   };
   attributes: {
@@ -407,6 +408,7 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
   attributes: {
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    metaRobots: Schema.Attribute.String;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
     shareImage: Schema.Attribute.Media<'images'>;
   };

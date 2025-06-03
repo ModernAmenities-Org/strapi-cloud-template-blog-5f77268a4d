@@ -1,7 +1,8 @@
 {
   "collectionName": "components_shared_details_items",
   "info": {
-    "displayName": "Details-item"
+    "displayName": "Details-item",
+    "description": ""
   },
   "options": {},
   "attributes": {

@@ -558,6 +558,7 @@ export interface ApiFaqPageFaqPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -810,37 +811,6 @@ export interface ApiPlanFeaturePlanFeature extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiPlatformTermPlatformTerm extends Struct.SingleTypeSchema {
-  collectionName: 'platform_terms';
-  info: {
-    displayName: 'Platform Term';
-    pluralName: 'platform-terms';
-    singularName: 'platform-term';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    agreementAndPlatform: Schema.Attribute.Component<
-      'shared.details-section',
-      false
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::platform-term.platform-term'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiPricingPricing extends Struct.SingleTypeSchema {
   collectionName: 'pricings';
   info: {
@@ -880,6 +850,7 @@ export interface ApiPricingPricing extends Struct.SingleTypeSchema {
 export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
   collectionName: 'privacy_policies';
   info: {
+    description: '';
     displayName: 'Privacy Policy';
     pluralName: 'privacy-policies';
     singularName: 'privacy-policy';
@@ -899,6 +870,7 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     privacy: Schema.Attribute.Component<'shared.details-section', false>;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -908,6 +880,7 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
 export interface ApiRefundPolicyRefundPolicy extends Struct.SingleTypeSchema {
   collectionName: 'refund_policies';
   info: {
+    description: '';
     displayName: 'Refund Policy';
     pluralName: 'refund-policies';
     singularName: 'refund-policy';
@@ -930,6 +903,7 @@ export interface ApiRefundPolicyRefundPolicy extends Struct.SingleTypeSchema {
       'shared.details-section',
       false
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -963,6 +937,40 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
     order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     text: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiUserAgreementUserAgreement extends Struct.SingleTypeSchema {
+  collectionName: 'user_agreements';
+  info: {
+    description: '';
+    displayName: 'User Agreement';
+    pluralName: 'user-agreements';
+    singularName: 'user-agreement';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    agreementAndPlatform: Schema.Attribute.Component<
+      'shared.details-item',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-agreement.user-agreement'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1491,11 +1499,11 @@ declare module '@strapi/strapi' {
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::modular-dashboard.modular-dashboard': ApiModularDashboardModularDashboard;
       'api::plan-feature.plan-feature': ApiPlanFeaturePlanFeature;
-      'api::platform-term.platform-term': ApiPlatformTermPlatformTerm;
       'api::pricing.pricing': ApiPricingPricing;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::refund-policy.refund-policy': ApiRefundPolicyRefundPolicy;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::user-agreement.user-agreement': ApiUserAgreementUserAgreement;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
