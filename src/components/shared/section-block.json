@@ -1,25 +1,27 @@
 {
   "collectionName": "components_shared_section_blocks",
   "info": {
-    "displayName": "section-block"
+    "displayName": "section-block",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "blocks"
     },
-    "Images": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }

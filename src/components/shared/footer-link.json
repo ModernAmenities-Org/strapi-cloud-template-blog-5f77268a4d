@@ -1,14 +1,15 @@
 {
   "collectionName": "components_shared_footer_links",
   "info": {
-    "displayName": "Footer-Link"
+    "displayName": "Footer-Link",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Text": {
+    "text": {
       "type": "string"
     },
-    "Url": {
+    "url": {
       "type": "string"
     }
   }
