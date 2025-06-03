@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_details_items",
+  "info": {
+    "displayName": "Details-item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "blocks"
+    }
+  }
+}

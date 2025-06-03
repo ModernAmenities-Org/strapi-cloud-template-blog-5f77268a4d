@@ -534,9 +534,40 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFaqPageFaqPage extends Struct.SingleTypeSchema {
+  collectionName: 'faq_pages';
+  info: {
+    description: '';
+    displayName: 'FaqPage';
+    pluralName: 'faq-pages';
+    singularName: 'faq-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqItems: Schema.Attribute.Component<'sections.footer-faq-section', true>;
+    heading: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-page.faq-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
+    description: '';
     displayName: 'Faq';
     pluralName: 'faqs';
     singularName: 'faq';
@@ -779,6 +810,37 @@ export interface ApiPlanFeaturePlanFeature extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPlatformTermPlatformTerm extends Struct.SingleTypeSchema {
+  collectionName: 'platform_terms';
+  info: {
+    displayName: 'Platform Term';
+    pluralName: 'platform-terms';
+    singularName: 'platform-term';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    agreementAndPlatform: Schema.Attribute.Component<
+      'shared.details-section',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::platform-term.platform-term'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPricingPricing extends Struct.SingleTypeSchema {
   collectionName: 'pricings';
   info: {
@@ -809,6 +871,65 @@ export interface ApiPricingPricing extends Struct.SingleTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
+  collectionName: 'privacy_policies';
+  info: {
+    displayName: 'Privacy Policy';
+    pluralName: 'privacy-policies';
+    singularName: 'privacy-policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacy-policy.privacy-policy'
+    > &
+      Schema.Attribute.Private;
+    privacy: Schema.Attribute.Component<'shared.details-section', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRefundPolicyRefundPolicy extends Struct.SingleTypeSchema {
+  collectionName: 'refund_policies';
+  info: {
+    displayName: 'Refund Policy';
+    pluralName: 'refund-policies';
+    singularName: 'refund-policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::refund-policy.refund-policy'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    refundAndReturn: Schema.Attribute.Component<
+      'shared.details-section',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1362,6 +1483,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
+      'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq.faq': ApiFaqFaq;
       'api::feature.feature': ApiFeatureFeature;
       'api::footer.footer': ApiFooterFooter;
@@ -1369,7 +1491,10 @@ declare module '@strapi/strapi' {
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::modular-dashboard.modular-dashboard': ApiModularDashboardModularDashboard;
       'api::plan-feature.plan-feature': ApiPlanFeaturePlanFeature;
+      'api::platform-term.platform-term': ApiPlatformTermPlatformTerm;
       'api::pricing.pricing': ApiPricingPricing;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::refund-policy.refund-policy': ApiRefundPolicyRefundPolicy;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

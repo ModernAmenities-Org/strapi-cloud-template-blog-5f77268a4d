@@ -23,6 +23,18 @@ export interface SectionsEcosystem extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsFooterFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_footer_faq_sections';
+  info: {
+    description: '';
+    displayName: 'Faq-Section';
+  };
+  attributes: {
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+    title: Schema.Attribute.Text;
+  };
+}
+
 export interface SectionsHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_hero_sections';
   info: {
@@ -257,6 +269,29 @@ export interface SharedContactInfoBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedDetailsItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_details_items';
+  info: {
+    displayName: 'Details-item';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedDetailsSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_details_sections';
+  info: {
+    description: '';
+    displayName: 'Details-section';
+  };
+  attributes: {
+    detailsItem: Schema.Attribute.Component<'shared.details-item', true>;
+    heading: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedFaq extends Struct.ComponentSchema {
   collectionName: 'components_shared_faqs';
   info: {
@@ -435,6 +470,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'sections.buttons-component': SectionsButtonsComponent;
       'sections.ecosystem': SectionsEcosystem;
+      'sections.footer-faq-section': SectionsFooterFaqSection;
       'sections.hero-section': SectionsHeroSection;
       'sections.how-it-works-section': SectionsHowItWorksSection;
       'sections.how-it-works-step': SectionsHowItWorksStep;
@@ -452,6 +488,8 @@ declare module '@strapi/strapi' {
       'shared.carousel-card': SharedCarouselCard;
       'shared.contact-card': SharedContactCard;
       'shared.contact-info-block': SharedContactInfoBlock;
+      'shared.details-item': SharedDetailsItem;
+      'shared.details-section': SharedDetailsSection;
       'shared.faq': SharedFaq;
       'shared.faq-section': SharedFaqSection;
       'shared.feature': SharedFeature;

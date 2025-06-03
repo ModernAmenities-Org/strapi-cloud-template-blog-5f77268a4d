@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_details_sections",
+  "info": {
+    "displayName": "Details-section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "text"
+    },
+    "detailsItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.details-item"
+    }
+  }
+}

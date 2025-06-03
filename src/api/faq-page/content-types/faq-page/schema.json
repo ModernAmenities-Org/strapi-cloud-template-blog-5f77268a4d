@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "faq_pages",
+  "info": {
+    "singularName": "faq-page",
+    "pluralName": "faq-pages",
+    "displayName": "FaqPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heading": {
+      "type": "text"
+    },
+    "faqItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.footer-faq-section"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "platform_terms",
+  "info": {
+    "singularName": "platform-term",
+    "pluralName": "platform-terms",
+    "displayName": "Platform Term"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "agreementAndPlatform": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.details-section"
+    }
+  }
+}
