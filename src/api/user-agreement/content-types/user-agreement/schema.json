@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "faq_pages",
+  "collectionName": "user_agreements",
   "info": {
-    "singularName": "faq-page",
-    "pluralName": "faq-pages",
-    "displayName": "FaqPage",
+    "singularName": "user-agreement",
+    "pluralName": "user-agreements",
+    "displayName": "User Agreement",
     "description": ""
   },
   "options": {
@@ -14,10 +14,10 @@
     "heading": {
       "type": "text"
     },
-    "faqItems": {
+    "agreementAndPlatform": {
       "type": "component",
       "repeatable": true,
-      "component": "sections.footer-faq-section"
+      "component": "shared.details-item"
     },
     "seo": {
       "type": "component",
