@@ -12,12 +12,6 @@
     "description": {
       "type": "text"
     },
-    "buttonText": {
-      "type": "string"
-    },
-    "buttonUrl": {
-      "type": "string"
-    },
     "heroImage": {
       "type": "media",
       "multiple": false,
@@ -28,6 +22,11 @@
         "videos",
         "audios"
       ]
+    },
+    "buttonComponent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.buttons-component"
     }
   }
 }
