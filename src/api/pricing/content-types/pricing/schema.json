@@ -20,6 +20,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::plan-feature.plan-feature"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

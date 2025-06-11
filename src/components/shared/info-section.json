@@ -12,21 +12,21 @@
     "description": {
       "type": "string"
     },
-    "buttonText": {
-      "type": "string"
-    },
-    "buttonUrl": {
-      "type": "string"
-    },
     "bgImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "buttonComponent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.buttons-component"
     }
   }
 }

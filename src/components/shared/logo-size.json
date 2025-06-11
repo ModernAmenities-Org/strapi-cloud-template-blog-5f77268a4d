@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_logo_sizes",
+  "info": {
+    "displayName": "Logo-Size"
+  },
+  "options": {},
+  "attributes": {
+    "sizeName": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "medium",
+        "large"
+      ]
+    },
+    "imageWidth": {
+      "type": "integer"
+    },
+    "imageHeight": {
+      "type": "integer"
+    },
+    "textSize": {
+      "type": "text"
+    },
+    "isActive": {
+      "type": "boolean"
+    }
+  }
+}

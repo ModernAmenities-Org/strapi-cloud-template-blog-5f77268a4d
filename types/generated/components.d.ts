@@ -3,11 +3,15 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface SectionsButtonsComponent extends Struct.ComponentSchema {
   collectionName: 'components_sections_buttons_components';
   info: {
+    description: '';
     displayName: 'ButtonsComponent';
   };
   attributes: {
     buttonText: Schema.Attribute.String;
     buttonUrl: Schema.Attribute.String;
+    offset: Schema.Attribute.Integer;
+    openNewTab: Schema.Attribute.Boolean;
+    variant: Schema.Attribute.String;
   };
 }
 
@@ -42,8 +46,10 @@ export interface SectionsHeroSection extends Struct.ComponentSchema {
     displayName: 'Hero-section';
   };
   attributes: {
-    buttonText: Schema.Attribute.String;
-    buttonUrl: Schema.Attribute.String;
+    buttonComponent: Schema.Attribute.Component<
+      'sections.buttons-component',
+      false
+    >;
     description: Schema.Attribute.Text;
     heroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
@@ -247,25 +253,27 @@ export interface SharedContactCard extends Struct.ComponentSchema {
     displayName: 'Contact-card';
   };
   attributes: {
-    CardDescription: Schema.Attribute.String;
-    DescriptionUrl: Schema.Attribute.String;
-    Icon: Schema.Attribute.Media<
+    cardDescription: Schema.Attribute.String;
+    descriptionUrl: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    Info: Schema.Attribute.Component<'shared.contact-info-block', true>;
-    Title: Schema.Attribute.String;
+    info: Schema.Attribute.Component<'shared.contact-info-block', true>;
+    linkIcon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
   };
 }
 
 export interface SharedContactInfoBlock extends Struct.ComponentSchema {
   collectionName: 'components_shared_contact_info_blocks';
   info: {
+    description: '';
     displayName: 'Contact-info-block';
   };
   attributes: {
-    Label: Schema.Attribute.String;
-    Value: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
   };
 }
 
@@ -376,10 +384,26 @@ export interface SharedInfoSection extends Struct.ComponentSchema {
   };
   attributes: {
     bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    buttonText: Schema.Attribute.String;
-    buttonUrl: Schema.Attribute.String;
+    buttonComponent: Schema.Attribute.Component<
+      'sections.buttons-component',
+      false
+    >;
     description: Schema.Attribute.String;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedLogoSize extends Struct.ComponentSchema {
+  collectionName: 'components_shared_logo_sizes';
+  info: {
+    displayName: 'Logo-Size';
+  };
+  attributes: {
+    imageHeight: Schema.Attribute.Integer;
+    imageWidth: Schema.Attribute.Integer;
+    isActive: Schema.Attribute.Boolean;
+    sizeName: Schema.Attribute.Enumeration<['small', 'medium', 'large']>;
+    textSize: Schema.Attribute.Text;
   };
 }
 
@@ -499,6 +523,7 @@ declare module '@strapi/strapi' {
       'shared.footer-link': SharedFooterLink;
       'shared.icon-block': SharedIconBlock;
       'shared.info-section': SharedInfoSection;
+      'shared.logo-size': SharedLogoSize;
       'shared.section-block': SharedSectionBlock;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
