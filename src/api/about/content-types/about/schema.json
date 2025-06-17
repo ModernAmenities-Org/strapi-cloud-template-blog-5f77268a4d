@@ -37,6 +37,11 @@
       "type": "component",
       "component": "shared.info-section",
       "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }
