@@ -10,19 +10,20 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "heading": {
       "type": "text"
     },
     "agreementAndPlatform": {
       "type": "component",
-      "repeatable": true,
-      "component": "shared.details-item"
+      "component": "shared.details-item",
+      "repeatable": true
     },
     "seo": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

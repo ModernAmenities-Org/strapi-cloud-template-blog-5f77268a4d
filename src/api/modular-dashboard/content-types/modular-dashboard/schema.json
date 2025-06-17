@@ -14,8 +14,8 @@
   "attributes": {
     "carousel": {
       "type": "component",
-      "repeatable": true,
-      "component": "sections.modular-dashboard-carousel-item"
+      "component": "sections.modular-dashboard-carousel-item",
+      "repeatable": true
     },
     "title": {
       "type": "string",

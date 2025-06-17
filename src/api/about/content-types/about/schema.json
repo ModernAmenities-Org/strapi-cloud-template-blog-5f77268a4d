@@ -8,7 +8,7 @@
     "description": "Write about yourself and the content you create"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -20,23 +20,23 @@
     },
     "ourStory": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.section-block"
+      "component": "shared.section-block",
+      "repeatable": false
     },
     "poweredInnovation": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.feature"
+      "component": "shared.feature",
+      "repeatable": false
     },
     "vision": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.section-block"
+      "component": "shared.section-block",
+      "repeatable": false
     },
     "ctaBlock": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.info-section"
+      "component": "shared.info-section",
+      "repeatable": false
     }
   }
 }

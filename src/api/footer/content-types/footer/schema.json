@@ -9,29 +9,30 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "logo": {
+      "type": "media",
+      "multiple": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "footerColumn": {
       "type": "component",
-      "repeatable": true,
-      "component": "shared.footer-column"
+      "component": "shared.footer-column",
+      "repeatable": true
     },
     "copyRightText": {
       "type": "string"
     },
     "socialLinks": {
       "type": "component",
-      "repeatable": true,
-      "component": "shared.social-link"
+      "component": "shared.social-link",
+      "repeatable": true
     }
   }
 }

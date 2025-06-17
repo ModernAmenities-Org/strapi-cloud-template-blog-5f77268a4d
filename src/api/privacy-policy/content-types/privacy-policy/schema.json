@@ -10,16 +10,17 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "privacy": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.details-section"
+      "component": "shared.details-section",
+      "repeatable": false
     },
     "seo": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }
