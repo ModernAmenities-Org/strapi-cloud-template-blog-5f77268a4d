@@ -42,6 +42,11 @@
       "component": "shared.testimonials-section",
       "repeatable": false
     },
+    "subscription": {
+      "type": "component",
+      "component": "shared.info-section",
+      "repeatable": false
+    },
     "seo": {
       "type": "component",
       "component": "shared.seo",

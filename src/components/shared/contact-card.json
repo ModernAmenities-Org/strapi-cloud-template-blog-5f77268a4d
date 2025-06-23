@@ -6,29 +6,24 @@
   },
   "options": {},
   "attributes": {
-    "Icon": {
+    "icon": {
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
     },
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Info": {
+    "info": {
       "type": "component",
       "repeatable": true,
       "component": "shared.contact-info-block"
     },
-    "CardDescription": {
+    "cardDescription": {
       "type": "string"
     },
-    "DescriptionUrl": {
+    "descriptionUrl": {
       "type": "string"
     }
   }

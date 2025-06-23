@@ -639,6 +639,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     roadmap: Schema.Attribute.Component<'sections.roadmap-section', false>;
     seo: Schema.Attribute.Component<'shared.seo', false>;
+    subscription: Schema.Attribute.Component<'shared.info-section', false>;
     testimonial: Schema.Attribute.Component<
       'shared.testimonials-section',
       false
