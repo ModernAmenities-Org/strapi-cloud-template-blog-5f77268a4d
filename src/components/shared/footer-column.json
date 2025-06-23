@@ -5,10 +5,10 @@
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "TextLink": {
+    "textLink": {
       "type": "component",
       "repeatable": true,
       "component": "shared.footer-link"

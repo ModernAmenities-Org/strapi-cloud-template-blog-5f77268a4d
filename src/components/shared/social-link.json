@@ -5,17 +5,12 @@
   },
   "options": {},
   "attributes": {
-    "Icon": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
+    "icon": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
       "type": "media",
       "multiple": false
     },
-    "Url": {
+    "url": {
       "type": "string"
     }
   }

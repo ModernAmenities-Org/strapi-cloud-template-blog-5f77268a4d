@@ -5,19 +5,14 @@
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "blocks"
     },
-    "Images": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
+    "images": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
       "type": "media",
       "multiple": true
     }

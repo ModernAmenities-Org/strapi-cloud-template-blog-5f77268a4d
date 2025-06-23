@@ -247,14 +247,14 @@ export interface SharedContactCard extends Struct.ComponentSchema {
     displayName: 'Contact-card';
   };
   attributes: {
-    CardDescription: Schema.Attribute.String;
-    DescriptionUrl: Schema.Attribute.String;
-    Icon: Schema.Attribute.Media<
+    cardDescription: Schema.Attribute.String;
+    descriptionUrl: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    Info: Schema.Attribute.Component<'shared.contact-info-block', true>;
-    Title: Schema.Attribute.String;
+    info: Schema.Attribute.Component<'shared.contact-info-block', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -264,8 +264,8 @@ export interface SharedContactInfoBlock extends Struct.ComponentSchema {
     displayName: 'Contact-info-block';
   };
   attributes: {
-    Label: Schema.Attribute.String;
-    Value: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
   };
 }
 
@@ -327,8 +327,8 @@ export interface SharedFeature extends Struct.ComponentSchema {
   };
   attributes: {
     features: Schema.Attribute.Component<'shared.icon-block', true>;
-    InnovationDescription: Schema.Attribute.String;
-    InnovationTitle: Schema.Attribute.String;
+    innovationDescription: Schema.Attribute.String;
+    innovationTitle: Schema.Attribute.String;
   };
 }
 
@@ -338,8 +338,8 @@ export interface SharedFooterColumn extends Struct.ComponentSchema {
     displayName: 'Footer-Column';
   };
   attributes: {
-    TextLink: Schema.Attribute.Component<'shared.footer-link', true>;
-    Title: Schema.Attribute.String;
+    textLink: Schema.Attribute.Component<'shared.footer-link', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -349,8 +349,8 @@ export interface SharedFooterLink extends Struct.ComponentSchema {
     displayName: 'Footer-Link';
   };
   attributes: {
-    Text: Schema.Attribute.String;
-    Url: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -389,12 +389,12 @@ export interface SharedSectionBlock extends Struct.ComponentSchema {
     displayName: 'section-block';
   };
   attributes: {
-    Description: Schema.Attribute.Blocks;
-    Images: Schema.Attribute.Media<
+    description: Schema.Attribute.Blocks;
+    images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    Title: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -432,8 +432,8 @@ export interface SharedSocialLink extends Struct.ComponentSchema {
     displayName: 'Social-Link';
   };
   attributes: {
-    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Url: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    url: Schema.Attribute.String;
   };
 }
 
