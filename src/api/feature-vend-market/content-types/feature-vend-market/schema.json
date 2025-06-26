@@ -1,0 +1,70 @@
+{
+  "kind": "singleType",
+  "collectionName": "feature_vend_markets",
+  "info": {
+    "singularName": "feature-vend-market",
+    "pluralName": "feature-vend-markets",
+    "displayName": "Feature VendMarket"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.social-link"
+    },
+    "heroBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.hero-section"
+    },
+    "vendMarket": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.vend-lead"
+    },
+    "keyBenefits": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.key-benefits"
+    },
+    "howItWorks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.how-it-works-section"
+    },
+    "platinumAdvantage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.platinum-advantage"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.faq-section"
+    },
+    "ctaBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.info-section"
+    },
+    "testimonial": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.testimonials-section"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}
