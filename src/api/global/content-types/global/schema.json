@@ -20,20 +20,27 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ]
+      "allowedTypes": ["images", "files", "videos"]
     },
     "siteDescription": {
       "type": "text",
       "required": true
     },
+    "showLandingPage": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
     "defaultSeo": {
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
+    },
+    "publicRoutes": {
+      "type": "component",
+      "component": "shared.public-routes",
+      "repeatable": true,
+      "required": false
     }
   }
 }

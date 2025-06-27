@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_public_routes",
+  "info": {
+    "displayName": "Public Route"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "path": {
+      "type": "string",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    }
+  }
+}
