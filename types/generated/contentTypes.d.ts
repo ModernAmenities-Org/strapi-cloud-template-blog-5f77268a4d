@@ -599,7 +599,10 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
       'api::global.global'
     > &
       Schema.Attribute.Private;
+    publicRoutes: Schema.Attribute.Component<'shared.public-routes', true>;
     publishedAt: Schema.Attribute.DateTime;
+    showLandingPage: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;

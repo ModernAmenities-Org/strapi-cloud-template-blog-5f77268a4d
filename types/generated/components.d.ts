@@ -383,6 +383,18 @@ export interface SharedInfoSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPublicRoutes extends Struct.ComponentSchema {
+  collectionName: 'components_shared_public_routes';
+  info: {
+    displayName: 'Public Route';
+  };
+  attributes: {
+    active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    path: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedSectionBlock extends Struct.ComponentSchema {
   collectionName: 'components_shared_section_blocks';
   info: {
@@ -499,6 +511,7 @@ declare module '@strapi/strapi' {
       'shared.footer-link': SharedFooterLink;
       'shared.icon-block': SharedIconBlock;
       'shared.info-section': SharedInfoSection;
+      'shared.public-routes': SharedPublicRoutes;
       'shared.section-block': SharedSectionBlock;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
