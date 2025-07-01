@@ -9,9 +9,6 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
     "buttonText": {
       "type": "string"
     },
@@ -28,6 +25,9 @@
         "videos",
         "audios"
       ]
+    },
+    "description": {
+      "type": "blocks"
     }
   }
 }

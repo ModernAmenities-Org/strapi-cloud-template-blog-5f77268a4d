@@ -34,10 +34,6 @@ export interface AdminApiToken extends Struct.CollectionTypeSchema {
         minLength: 1;
       }> &
       Schema.Attribute.DefaultTo<''>;
-    encryptedKey: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        minLength: 1;
-      }>;
     expiresAt: Schema.Attribute.DateTime;
     lastUsedAt: Schema.Attribute.DateTime;
     lifespan: Schema.Attribute.BigInteger;
@@ -496,13 +492,14 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiFeatureFeature extends Struct.SingleTypeSchema {
-  collectionName: 'features';
+export interface ApiFeatureVendLeadFeatureVendLead
+  extends Struct.SingleTypeSchema {
+  collectionName: 'feature_vend_leads';
   info: {
     description: '';
-    displayName: 'Feature';
-    pluralName: 'features';
-    singularName: 'feature';
+    displayName: 'Feature VendLead';
+    pluralName: 'feature-vend-leads';
+    singularName: 'feature-vend-lead';
   };
   options: {
     draftAndPublish: true;
@@ -511,7 +508,7 @@ export interface ApiFeatureFeature extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    ctablock: Schema.Attribute.Component<'shared.info-section', false>;
+    ctaBlock: Schema.Attribute.Component<'shared.info-section', false>;
     faq: Schema.Attribute.Component<'shared.faq-section', false>;
     heroBlock: Schema.Attribute.Component<'sections.hero-section', false>;
     howItWorks: Schema.Attribute.Component<
@@ -524,7 +521,7 @@ export interface ApiFeatureFeature extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::feature.feature'
+      'api::feature-vend-lead.feature-vend-lead'
     > &
       Schema.Attribute.Private;
     platinumAdvantage: Schema.Attribute.Component<
@@ -542,6 +539,105 @@ export interface ApiFeatureFeature extends Struct.SingleTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     vendLead: Schema.Attribute.Component<'sections.vend-lead', false>;
+  };
+}
+
+export interface ApiFeatureVendMarketFeatureVendMarket
+  extends Struct.SingleTypeSchema {
+  collectionName: 'feature_vend_markets';
+  info: {
+    displayName: 'Feature VendMarket';
+    pluralName: 'feature-vend-markets';
+    singularName: 'feature-vend-market';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaBlock: Schema.Attribute.Component<'shared.info-section', false>;
+    faq: Schema.Attribute.Component<'shared.faq-section', false>;
+    heroBlock: Schema.Attribute.Component<'sections.hero-section', false>;
+    howItWorks: Schema.Attribute.Component<
+      'sections.how-it-works-section',
+      false
+    >;
+    icon: Schema.Attribute.Component<'shared.social-link', false>;
+    keyBenefits: Schema.Attribute.Component<'sections.key-benefits', false>;
+    label: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::feature-vend-market.feature-vend-market'
+    > &
+      Schema.Attribute.Private;
+    platinumAdvantage: Schema.Attribute.Component<
+      'sections.platinum-advantage',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    testimonial: Schema.Attribute.Component<
+      'shared.testimonials-section',
+      false
+    >;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vendMarket: Schema.Attribute.Component<'sections.vend-lead', false>;
+  };
+}
+
+export interface ApiFeatureVendRouteFeatureVendRoute
+  extends Struct.SingleTypeSchema {
+  collectionName: 'feature_vend_routes';
+  info: {
+    description: '';
+    displayName: 'Feature VendRoute';
+    pluralName: 'feature-vend-routes';
+    singularName: 'feature-vend-route';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaBlock: Schema.Attribute.Component<'shared.info-section', false>;
+    faq: Schema.Attribute.Component<'shared.faq-section', false>;
+    heroBlock: Schema.Attribute.Component<'sections.hero-section', false>;
+    howItWorks: Schema.Attribute.Component<
+      'sections.how-it-works-section',
+      false
+    >;
+    icon: Schema.Attribute.Component<'shared.social-link', false>;
+    keyBenefits: Schema.Attribute.Component<'sections.key-benefits', false>;
+    label: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::feature-vend-route.feature-vend-route'
+    > &
+      Schema.Attribute.Private;
+    platinumAdvantage: Schema.Attribute.Component<
+      'sections.platinum-advantage',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    testimonial: Schema.Attribute.Component<
+      'shared.testimonials-section',
+      false
+    >;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vendRoute: Schema.Attribute.Component<'sections.vend-lead', false>;
   };
 }
 
@@ -1399,7 +1495,9 @@ declare module '@strapi/strapi' {
       'api::contact.contact': ApiContactContact;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq.faq': ApiFaqFaq;
-      'api::feature.feature': ApiFeatureFeature;
+      'api::feature-vend-lead.feature-vend-lead': ApiFeatureVendLeadFeatureVendLead;
+      'api::feature-vend-market.feature-vend-market': ApiFeatureVendMarketFeatureVendMarket;
+      'api::feature-vend-route.feature-vend-route': ApiFeatureVendRouteFeatureVendRoute;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;

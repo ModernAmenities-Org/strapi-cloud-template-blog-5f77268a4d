@@ -12,9 +12,6 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -25,6 +22,9 @@
         "videos",
         "audios"
       ]
+    },
+    "description": {
+      "type": "blocks"
     }
   }
 }
