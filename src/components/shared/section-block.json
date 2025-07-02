@@ -9,7 +9,7 @@
       "type": "string"
     },
     "description": {
-      "type": "blocks"
+      "type": "text"
     },
     "images": {
       "allowedTypes": ["images", "files", "videos", "audios"],
