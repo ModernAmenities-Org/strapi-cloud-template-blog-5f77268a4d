@@ -9,7 +9,7 @@
       "type": "string"
     },
     "description": {
-      "type": "text"
+      "type": "richtext"
     },
     "images": {
       "allowedTypes": ["images", "files", "videos", "audios"],

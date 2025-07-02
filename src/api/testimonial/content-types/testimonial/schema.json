@@ -24,7 +24,7 @@
       "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "text": {
-      "type": "text"
+      "type": "richtext"
     },
     "order": {
       "type": "integer"

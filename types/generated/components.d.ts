@@ -44,7 +44,7 @@ export interface SectionsHeroSection extends Struct.ComponentSchema {
   attributes: {
     buttonText: Schema.Attribute.String;
     buttonUrl: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     heroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
@@ -182,7 +182,7 @@ export interface SectionsVendLead extends Struct.ComponentSchema {
     displayName: 'vend-Lead';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
@@ -276,7 +276,7 @@ export interface SharedDetailsItem extends Struct.ComponentSchema {
     displayName: 'Details-item';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     title: Schema.Attribute.Text;
   };
 }
@@ -401,7 +401,7 @@ export interface SharedSectionBlock extends Struct.ComponentSchema {
     displayName: 'section-block';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -456,7 +456,7 @@ export interface SharedTeamMember extends Struct.ComponentSchema {
     displayName: ' Team Member';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };

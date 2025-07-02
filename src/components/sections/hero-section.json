@@ -22,7 +22,7 @@
       "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "description": {
-      "type": "text"
+      "type": "richtext"
     }
   }
 }
