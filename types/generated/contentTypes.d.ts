@@ -699,6 +699,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
       'api::global.global'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     publicRoutes: Schema.Attribute.Component<'shared.public-routes', true>;
     publishedAt: Schema.Attribute.DateTime;
     showLandingPage: Schema.Attribute.Boolean &
