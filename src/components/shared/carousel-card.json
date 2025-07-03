@@ -19,12 +19,7 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "title": {
       "type": "string"
@@ -35,10 +30,10 @@
       "repeatable": true,
       "component": "shared.bullets"
     },
-    "button": {
+    "cta": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.buttons-component"
+      "component": "sections.cta-block"
     }
   }
 }

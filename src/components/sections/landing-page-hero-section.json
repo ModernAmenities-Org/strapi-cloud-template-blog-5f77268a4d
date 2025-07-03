@@ -12,32 +12,22 @@
     "description": {
       "type": "string"
     },
-    "buttons": {
+    "ctas": {
       "type": "component",
       "repeatable": true,
-      "component": "sections.buttons-component"
+      "component": "sections.cta-block"
     },
     "heroImage": {
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "avatars": {
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "joinText": {
       "type": "string"

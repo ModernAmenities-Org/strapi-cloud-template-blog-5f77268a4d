@@ -12,19 +12,13 @@
     "description": {
       "type": "string"
     },
-    "buttonText": {
-      "type": "string"
-    },
-    "buttonUrl": {
-      "type": "string"
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.cta-block"
     },
     "bgImage": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
+      "allowedTypes": ["images", "files", "videos", "audios"],
       "type": "media",
       "multiple": false
     }
