@@ -23,11 +23,6 @@
       "component": "shared.social-link"
     },
 
-    "vendRoute": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.vend-lead"
-    },
     "keyBenefits": {
       "type": "component",
       "repeatable": false,
