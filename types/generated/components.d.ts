@@ -276,7 +276,7 @@ export interface SharedDetailsItem extends Struct.ComponentSchema {
     displayName: 'Details-item';
   };
   attributes: {
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.Blocks;
     title: Schema.Attribute.Text;
   };
 }
