@@ -23,6 +23,9 @@
       "required": false,
       "allowedTypes": ["images", "files", "videos", "audios"]
     },
+    "text": {
+      "type": "blocks"
+    },
 
     "order": {
       "type": "integer"
