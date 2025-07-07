@@ -514,7 +514,6 @@ export interface ApiFeatureVendLeadFeatureVendLead
       Schema.Attribute.Private;
     ctaBlock: Schema.Attribute.Component<'shared.info-section', false>;
     faq: Schema.Attribute.Component<'shared.faq-section', false>;
-    heroBlock: Schema.Attribute.Component<'sections.hero-section', false>;
     howItWorks: Schema.Attribute.Component<
       'sections.how-it-works-section',
       false
@@ -563,7 +562,6 @@ export interface ApiFeatureVendMarketFeatureVendMarket
       Schema.Attribute.Private;
     ctaBlock: Schema.Attribute.Component<'shared.info-section', false>;
     faq: Schema.Attribute.Component<'shared.faq-section', false>;
-    heroBlock: Schema.Attribute.Component<'sections.hero-section', false>;
     howItWorks: Schema.Attribute.Component<
       'sections.how-it-works-section',
       false
@@ -613,7 +611,6 @@ export interface ApiFeatureVendRouteFeatureVendRoute
       Schema.Attribute.Private;
     ctaBlock: Schema.Attribute.Component<'shared.info-section', false>;
     faq: Schema.Attribute.Component<'shared.faq-section', false>;
-    heroBlock: Schema.Attribute.Component<'sections.hero-section', false>;
     howItWorks: Schema.Attribute.Component<
       'sections.how-it-works-section',
       false
@@ -946,7 +943,6 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    text: Schema.Attribute.RichText;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

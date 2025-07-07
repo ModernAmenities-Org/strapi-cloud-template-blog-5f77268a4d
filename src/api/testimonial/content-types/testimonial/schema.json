@@ -23,9 +23,7 @@
       "required": false,
       "allowedTypes": ["images", "files", "videos", "audios"]
     },
-    "text": {
-      "type": "richtext"
-    },
+
     "order": {
       "type": "integer"
     }

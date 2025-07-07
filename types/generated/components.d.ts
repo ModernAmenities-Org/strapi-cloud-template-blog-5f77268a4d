@@ -182,7 +182,7 @@ export interface SectionsVendLead extends Struct.ComponentSchema {
     displayName: 'vend-Lead';
   };
   attributes: {
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.Blocks;
     heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;

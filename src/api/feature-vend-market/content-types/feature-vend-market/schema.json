@@ -21,11 +21,7 @@
       "repeatable": false,
       "component": "shared.social-link"
     },
-    "heroBlock": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.hero-section"
-    },
+
     "vendMarket": {
       "type": "component",
       "repeatable": false,
