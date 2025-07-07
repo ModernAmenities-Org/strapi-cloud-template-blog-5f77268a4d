@@ -541,7 +541,6 @@ export interface ApiFeatureVendLeadFeatureVendLead
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    vendLead: Schema.Attribute.Component<'sections.vend-lead', false>;
   };
 }
 
@@ -589,7 +588,6 @@ export interface ApiFeatureVendMarketFeatureVendMarket
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    vendMarket: Schema.Attribute.Component<'sections.vend-lead', false>;
   };
 }
 
@@ -638,7 +636,6 @@ export interface ApiFeatureVendRouteFeatureVendRoute
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    vendRoute: Schema.Attribute.Component<'sections.vend-lead', false>;
   };
 }
 

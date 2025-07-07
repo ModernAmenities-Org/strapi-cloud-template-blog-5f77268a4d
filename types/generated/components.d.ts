@@ -401,7 +401,6 @@ export interface SharedSectionBlock extends Struct.ComponentSchema {
     displayName: 'section-block';
   };
   attributes: {
-    description: Schema.Attribute.Blocks;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
