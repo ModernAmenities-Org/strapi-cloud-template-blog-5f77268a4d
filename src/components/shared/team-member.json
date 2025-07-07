@@ -16,7 +16,7 @@
       "type": "string"
     },
     "description": {
-      "type": "richtext"
+      "type": "blocks"
     }
   }
 }
