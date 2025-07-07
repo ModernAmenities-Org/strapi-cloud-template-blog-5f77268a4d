@@ -453,7 +453,7 @@ export interface SharedTeamMember extends Struct.ComponentSchema {
   collectionName: 'components_shared_team_members';
   info: {
     description: '';
-    displayName: ' Team Member';
+    displayName: 'Team Member';
   };
   attributes: {
     description: Schema.Attribute.Blocks;
