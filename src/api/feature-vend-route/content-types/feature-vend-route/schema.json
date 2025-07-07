@@ -22,7 +22,16 @@
       "repeatable": false,
       "component": "shared.social-link"
     },
-
+    "heroBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.hero-section"
+    },
+    "vendRoute": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.vend-lead"
+    },
     "keyBenefits": {
       "type": "component",
       "repeatable": false,
