@@ -699,6 +699,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
       'api::global.global'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     publicRoutes: Schema.Attribute.Component<'shared.public-routes', true>;
     publishedAt: Schema.Attribute.DateTime;
     showLandingPage: Schema.Attribute.Boolean &
@@ -945,7 +946,7 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    text: Schema.Attribute.RichText;
+    text: Schema.Attribute.Blocks;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

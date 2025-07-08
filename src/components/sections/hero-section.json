@@ -21,7 +21,7 @@
       "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "description": {
-      "type": "richtext"
+      "type": "blocks"
     }
   }
 }

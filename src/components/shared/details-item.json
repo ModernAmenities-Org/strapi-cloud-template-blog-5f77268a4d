@@ -10,7 +10,7 @@
       "type": "text"
     },
     "description": {
-      "type": "richtext"
+      "type": "blocks"
     }
   }
 }
