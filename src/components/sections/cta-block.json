@@ -1,0 +1,60 @@
+{
+  "collectionName": "components_sections_cta_blocks",
+  "info": {
+    "displayName": "CTA Block",
+    "description": "A flexible call-to-action block with text, icons, and link options."
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "url": {
+      "type": "string",
+      "required": false
+    },
+    "prefixIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "suffixIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "iconButton": {
+      "type": "boolean",
+      "default": false
+    },
+    "scrollTo": {
+      "type": "string",
+      "required": false,
+      "description": "Target anchor or section ID for smooth scrolling."
+    },
+    "offset": {
+      "type": "string",
+      "required": false,
+      "description": "Target anchor or section ID for smooth scrolling, or scroll offset."
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, the CTA link will open in a new browser tab."
+    },
+    "variant": {
+      "type": "string",
+      "required": false,
+      "description": "Visual style variant for the CTA (e.g., primary, secondary, outline, etc.)."
+    }
+  }
+}

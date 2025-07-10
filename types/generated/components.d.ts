@@ -1,13 +1,26 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SectionsButtonsComponent extends Struct.ComponentSchema {
-  collectionName: 'components_sections_buttons_components';
+export interface SectionsCtaBlock extends Struct.ComponentSchema {
+  collectionName: 'components_sections_cta_blocks';
   info: {
-    displayName: 'ButtonsComponent';
+    description: 'A flexible call-to-action block with text, icons, and link options.';
+    displayName: 'CTA Block';
   };
   attributes: {
-    buttonText: Schema.Attribute.String;
-    buttonUrl: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    iconButton: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    offset: Schema.Attribute.String;
+    openInNewTab: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    prefixIcon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    scrollTo: Schema.Attribute.String;
+    suffixIcon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String;
+    variant: Schema.Attribute.String;
   };
 }
 
@@ -42,8 +55,7 @@ export interface SectionsHeroSection extends Struct.ComponentSchema {
     displayName: 'Hero-section';
   };
   attributes: {
-    buttonText: Schema.Attribute.String;
-    buttonUrl: Schema.Attribute.String;
+    cta: Schema.Attribute.Component<'sections.cta-block', false>;
     description: Schema.Attribute.Blocks;
     heroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
@@ -99,7 +111,7 @@ export interface SectionsLandingPageHeroSection extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    buttons: Schema.Attribute.Component<'sections.buttons-component', true>;
+    ctas: Schema.Attribute.Component<'sections.cta-block', true>;
     description: Schema.Attribute.String;
     heroImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
@@ -231,7 +243,7 @@ export interface SharedCarouselCard extends Struct.ComponentSchema {
   };
   attributes: {
     bullets: Schema.Attribute.Component<'shared.bullets', true>;
-    button: Schema.Attribute.Component<'sections.buttons-component', false>;
+    cta: Schema.Attribute.Component<'sections.cta-block', false>;
     iconName: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     key: Schema.Attribute.String;
@@ -376,8 +388,7 @@ export interface SharedInfoSection extends Struct.ComponentSchema {
   };
   attributes: {
     bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    buttonText: Schema.Attribute.String;
-    buttonUrl: Schema.Attribute.String;
+    cta: Schema.Attribute.Component<'sections.cta-block', false>;
     description: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
@@ -481,7 +492,7 @@ export interface SharedTestimonialsSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'sections.buttons-component': SectionsButtonsComponent;
+      'sections.cta-block': SectionsCtaBlock;
       'sections.ecosystem': SectionsEcosystem;
       'sections.footer-faq-section': SectionsFooterFaqSection;
       'sections.hero-section': SectionsHeroSection;
