@@ -123,6 +123,19 @@ export interface SectionsLandingPageHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsMarketCarousel extends Struct.ComponentSchema {
+  collectionName: 'components_sections_market_carousel_items';
+  info: {
+    displayName: 'Market-Carousel-Item';
+  };
+  attributes: {
+    ctaBlock: Schema.Attribute.Component<'shared.info-section', false>;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionsModularDashboardCarouselItem
   extends Struct.ComponentSchema {
   collectionName: 'components_sections_modular_dashboard_carousel_items';
@@ -412,6 +425,7 @@ export interface SharedSectionBlock extends Struct.ComponentSchema {
     displayName: 'section-block';
   };
   attributes: {
+    description: Schema.Attribute.Blocks;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -500,6 +514,7 @@ declare module '@strapi/strapi' {
       'sections.how-it-works-step': SectionsHowItWorksStep;
       'sections.key-benefits': SectionsKeyBenefits;
       'sections.landing-page-hero-section': SectionsLandingPageHeroSection;
+      'sections.market-carousel': SectionsMarketCarousel;
       'sections.modular-dashboard-carousel-item': SectionsModularDashboardCarouselItem;
       'sections.plan-feature-section': SectionsPlanFeatureSection;
       'sections.platinum-advantage': SectionsPlatinumAdvantage;
