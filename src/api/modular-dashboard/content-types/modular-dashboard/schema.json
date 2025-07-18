@@ -24,6 +24,12 @@
     "description": {
       "type": "text",
       "required": true
+    },
+    "modules": {
+      "type": "component",
+      "component": "shared.dashboard-module",
+      "repeatable": true,
+      "description": "Dashboard modules with icons, titles, metrics, and navigation"
     }
   }
 }

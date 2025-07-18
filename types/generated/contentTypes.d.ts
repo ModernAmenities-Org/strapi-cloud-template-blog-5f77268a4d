@@ -810,6 +810,7 @@ export interface ApiModularDashboardModularDashboard
       'api::modular-dashboard.modular-dashboard'
     > &
       Schema.Attribute.Private;
+    modules: Schema.Attribute.Component<'shared.dashboard-module', true>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
