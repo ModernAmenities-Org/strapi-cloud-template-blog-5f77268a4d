@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_market_carousel_items",
+  "info": {
+    "displayName": "Market-Carousel-Item"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "ctaBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.info-section"
+    }
+  }
+}
