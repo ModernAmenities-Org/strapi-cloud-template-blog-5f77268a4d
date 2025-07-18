@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_shared_dashboard_modules",
+  "info": {
+    "displayName": "Dashboard Module",
+    "description": "A dashboard module with icon, title, metrics, and navigation"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "The title of the dashboard module"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "description": "Icon for the dashboard module"
+    },
+    "href": {
+      "type": "string",
+      "required": false,
+      "description": "Navigation link for the module"
+    },
+    "metricLabel": {
+      "type": "string",
+      "required": false,
+      "description": "Label for the metric (e.g., 'users', 'orders')"
+    },
+    "metricValue": {
+      "type": "string",
+      "required": false,
+      "description": "The metric value (can be null for coming soon modules)"
+    },
+    "comingSoon": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this module is coming soon"
+    }
+  }
+}

@@ -294,6 +294,22 @@ export interface SharedContactInfoBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedDashboardModule extends Struct.ComponentSchema {
+  collectionName: 'components_shared_dashboard_modules';
+  info: {
+    description: 'A dashboard module with icon, title, metrics, and navigation';
+    displayName: 'Dashboard Module';
+  };
+  attributes: {
+    comingSoon: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    href: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images'>;
+    metricLabel: Schema.Attribute.String;
+    metricValue: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedDetailsItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_details_items';
   info: {
@@ -527,6 +543,7 @@ declare module '@strapi/strapi' {
       'shared.carousel-card': SharedCarouselCard;
       'shared.contact-card': SharedContactCard;
       'shared.contact-info-block': SharedContactInfoBlock;
+      'shared.dashboard-module': SharedDashboardModule;
       'shared.details-item': SharedDetailsItem;
       'shared.details-section': SharedDetailsSection;
       'shared.faq': SharedFaq;
