@@ -402,6 +402,7 @@ export interface SharedIconBlock extends Struct.ComponentSchema {
     displayName: 'icon-block';
   };
   attributes: {
+    cta: Schema.Attribute.Component<'sections.cta-block', false>;
     description: Schema.Attribute.String;
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     number: Schema.Attribute.Integer;

@@ -25,6 +25,11 @@
     },
     "number": {
       "type": "integer"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.cta-block"
     }
   }
 }
