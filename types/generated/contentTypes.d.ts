@@ -704,6 +704,8 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     showLandingPage: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<true>;
+    showUpgradePage: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;

@@ -37,6 +37,11 @@
       "default": true,
       "required": false
     },
+    "showUpgradePage": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
     "defaultSeo": {
       "type": "component",
       "component": "shared.seo",
