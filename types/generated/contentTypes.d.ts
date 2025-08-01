@@ -34,6 +34,10 @@ export interface AdminApiToken extends Struct.CollectionTypeSchema {
         minLength: 1;
       }> &
       Schema.Attribute.DefaultTo<''>;
+    encryptedKey: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
     expiresAt: Schema.Attribute.DateTime;
     lastUsedAt: Schema.Attribute.DateTime;
     lifespan: Schema.Attribute.BigInteger;
@@ -741,6 +745,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     roadmap: Schema.Attribute.Component<'sections.roadmap-section', false>;
     seo: Schema.Attribute.Component<'shared.seo', false>;
+    simplifiedLandingPageBgImage: Schema.Attribute.Media<'images'>;
     subscription: Schema.Attribute.Component<'shared.info-section', false>;
     testimonial: Schema.Attribute.Component<
       'shared.testimonials-section',
